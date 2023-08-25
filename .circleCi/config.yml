@@ -21,7 +21,7 @@ workflows:
   test_my_app:
     jobs:
       - cypress/run: 
-          cypress-command: npx cypress run --headless
+          cypress-command: npx cypress run --browser chrome
           # install-browsers: true
           start-command: npm run start
       # - start-command: 
