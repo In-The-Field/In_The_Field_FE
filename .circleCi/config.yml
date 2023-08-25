@@ -1,7 +1,6 @@
-version: 2.1
-
+version: '2.1'
 orbs:
-  node: circleci/node@4.7
+  cypress: cypress-io/cypress@3
 
 jobs:
   build_and_test:
@@ -27,9 +26,10 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      - run:
-          name: Install Cypress
-          command: npm install cypress
+      - cypress/run:
+          cypress-command: npx cypress run --browser chrome
+          install-browsers: true
+          start-command: npm start
       - persist_to_workspace:
           root: ~/project
           paths:
