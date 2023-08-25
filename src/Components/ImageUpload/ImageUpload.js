@@ -25,6 +25,7 @@ const ImageUpload = () => {
           </button>
         </div>
       </label>
+      {isDragging && <div className="drag-active" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag}></div> }
     </form>
   );
 };
