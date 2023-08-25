@@ -1,95 +1,11 @@
-version: 2.1
-
-orbs:
-  node: circleci/node@4.7
-  cypress: cypress-io/cypress@3
-
-jobs:
-  build_and_test:
-    executor: node/default
-    steps:
-      - checkout
-      - node/install-packages: 
-          pkg-manager: npm
-      - run:
-          name: Run tests
-          command: npm test
-      - run:
-          name: Run build
-          command: npm run build
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .
-
-  cypress_tests:
-    executor: node/default
-    steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: npm
-      - cypress/run:
-          cypress-command: npx cypress run --browser chrome
-          install-browsers: true
-          start-command: npm run start:dev
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - node_modules
-
-workflows:
-  version: 2
-  build_and_test_workflow:
+version: 2.1 # Use 2.1 to make use of orbs and other features
+orbs: # An orb is a reusable package of CircleCI configuration that you may share
+  # across projects, enabling you to create encapsulated, parameterized commands, jobs, and
+  # executors that can be used across multiple projects.
+  cypress: cypress-io/cypress@3.1.1
+workflows: # Workflows are a declarative way to orchestrate jobs and their run order.
+  build:
     jobs:
-      - build_and_test
-      - cypress_tests:
-          requires:
-            - build_and_test
-
-
-
-# version: '2.1'
-# orbs:
-#   cypress: cypress-io/cypress@3
-
-# jobs:
-#   build_and_test:
-#     executor: node/default
-#     steps:
-#       - checkout
-#       - node/install-packages: 
-#           pkg-manager: npm
-#       - run:
-#           name: Run tests
-#           command: npm test
-#       - run:
-#           name: Run build
-#           command: npm run build
-#       - persist_to_workspace:
-#           root: ~/project
-#           paths:
-#             - .
-
-#   cypress_tests:
-#     executor: node/default
-#     steps:
-#       - checkout
-#       - node/install-packages:
-#           pkg-manager: npm
-#       - cypress/run:
-#           cypress-command: npx cypress run --browser chrome
-#           install-browsers: true
-#           start-command: npm start
-#       - persist_to_workspace:
-#           root: ~/project
-#           paths:
-#             - .
-
-# workflows:
-#   version: 2
-#   build_and_test_workflow:
-#     jobs:
-#       - build_and_test
-#       - cypress_tests:
-#           requires:
-#             - build_and_test
+      - cypress/run: # Run the cypress/run job from the cypress orb
+          cypress-command: npx cypress run --headless # Run the cypress run command in headless mode
+          start-command: npm run dev
