@@ -19,14 +19,27 @@ const ImageUpload = () => {
     e.preventDefault()
     e.stopPropagation();
     setIsDragging(false)
-    console.log(e.dataTransfer.files)
-    const newImage = URL.createObjectURL(e.dataTransfer.files[0])
-    setUserImage(newImage)
+    console.log(e.dataTransfer.files[0])
+    if(!e.dataTransfer.files[0].type.includes("image")){
+      console.log("This is not an image")
+      setUserImage(null)
+    } else {
+      const newImage = URL.createObjectURL(e.dataTransfer.files[0])
+      setUserImage(newImage)
+    }
+
   }
 
+  const handleClick = (e) => {
+    e.preventDefaultDefault()
+    if(e.target.files[0]){
+      const newImage = URL.createObjectURL(e.target.files[0])
+      setUserImage(newImage)
+    }
+  }
   return (
     <form id="photo-form" onDragEnter={handleDrag}>
-      <input type="file" id="photo-input" multiple={false} accept="image/*" />
+      <input type="file" id="photo-input" multiple={false} accept="image/*" onChange={handleClick} />
       <label htmlFor="photo-input" className="label-photo-input">
         <div>
           <p>Drag and Drop your mushroom find</p>
@@ -36,6 +49,7 @@ const ImageUpload = () => {
         </div>
       </label>
       {userImage && <img src={userImage} />}
+      {/* above is only for viewing image droppings change state */}
       {isDragging && <div className="drag-active" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div> }
     </form>
   );
