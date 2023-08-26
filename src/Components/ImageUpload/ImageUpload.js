@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import "./ImageUpload.css"
 
 const ImageUpload = () => {
   const [userImage, setUserImage] = useState(null)
   const [isDragging, setIsDragging] = useState(false);
+  const userFileInput = useRef(null)
 
   const handleDrag = (e) => {
     e.preventDefault();
@@ -20,34 +21,35 @@ const ImageUpload = () => {
     e.stopPropagation();
     setIsDragging(false)
     console.log(e.dataTransfer.files[0])
-    if(!e.dataTransfer.files[0].type.includes("image")){
-      console.log("This is not an image")
-      setUserImage(null)
-    } else {
-      const newImage = URL.createObjectURL(e.dataTransfer.files[0])
-      setUserImage(newImage)
+    if (e.dataTransfer.files[0] && e.dataTransfer.files[0].type.includes("image")) {
+      const newImage = URL.createObjectURL(e.dataTransfer.files[0]);
+      setUserImage(newImage);
     }
 
   }
 
   const handleClick = (e) => {
-    e.preventDefaultDefault()
-    if(e.target.files[0]){
-      const newImage = URL.createObjectURL(e.target.files[0])
-      setUserImage(newImage)
-    }
+    userFileInput.current.click();
   }
+
+  const handleFileUpload = (e) => {
+    if (e.target.files[0] && e.target.files[0].type.includes("image")) {
+      const newImage = URL.createObjectURL(e.target.files[0]);
+      setUserImage(newImage);
+    }
+  };
+
   return (
-    <form id="photo-form" onDragEnter={handleDrag}>
-      <input type="file" id="photo-input" multiple={false} accept="image/*" onChange={handleClick} />
-      <label htmlFor="photo-input" className="label-photo-input">
-        <div>
+    <form id="photo-form" onDragEnter={handleDrag} onSubmit={(e) => e.preventDefault()}>
+      <input type="file" ref={userFileInput} id="photo-input" multiple={false} accept="image/*" onChange={handleFileUpload} />
+      {/* <label  className="label-photo-input"> */}
+        <div  className="label-photo-input">
           <p>Drag and Drop your mushroom find</p>
-          <button className="upload-button" >
+          <button  className="upload-button" onClick={handleClick} >
             Upload Photo
           </button>
         </div>
-      </label>
+      {/* </label> */}
       {userImage && <img src={userImage} />}
       {/* above is only for viewing image droppings change state */}
       {isDragging && <div className="drag-active" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div> }
