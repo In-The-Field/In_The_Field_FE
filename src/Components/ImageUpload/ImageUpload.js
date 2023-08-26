@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./ImageUpload.css"
 
 const ImageUpload = () => {
+  const [userImage, setUserImage] = useState(null)
   const [isDragging, setIsDragging] = useState(false);
 
   const handleDrag = (e) => {
@@ -14,6 +15,15 @@ const ImageUpload = () => {
     }
   };
 
+  const handleDrop = (e) => {
+    e.preventDefault()
+    e.stopPropagation();
+    setIsDragging(false)
+    console.log(e.dataTransfer.files)
+    const newImage = URL.createObjectURL(e.dataTransfer.files[0])
+    setUserImage(newImage)
+  }
+
   return (
     <form id="photo-form" onDragEnter={handleDrag}>
       <input type="file" id="photo-input" multiple={false} accept="image/*" />
@@ -25,7 +35,8 @@ const ImageUpload = () => {
           </button>
         </div>
       </label>
-      {isDragging && <div className="drag-active" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag}></div> }
+      {userImage && <img src={userImage} />}
+      {isDragging && <div className="drag-active" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div> }
     </form>
   );
 };
