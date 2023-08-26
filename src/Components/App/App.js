@@ -1,19 +1,19 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
 import './App.css';
+import HomePage from './HomePage'; 
+import ErrorPage from './ErrorPage'; 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/error" element={<ErrorPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
