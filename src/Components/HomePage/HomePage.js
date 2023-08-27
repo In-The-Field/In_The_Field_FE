@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from '../Nav/Nav';
 import ImageUpload from '../ImageUpload/ImageUpload';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import './HomePage.css';
@@ -20,6 +19,21 @@ const HomePage = ({ error }) => {
       </div>
     </div>
   );
+  
 };
 
 export default HomePage;
+
+// const [mushrooms, setMushrooms] = useState([]);
+
+// const renderMushroomCards = () => {
+//         return mushrooms.map(mushroom => (
+//             <MushroomCard 
+//                 key={mushroom.id}
+//                 image={mushroom.image} 
+//                 latinName={mushroom.latinName} 
+//                 commonNames={mushroom.commonNames}
+//                 probability={mushroom.probability} 
+//             />
+//       ));
+// }
