@@ -23,14 +23,16 @@
     border: 2px solid #FFDAB9;
     color: #624612;
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 2rem;
     border-radius: 5px;
+    font-family: cursive;
     transition: background-color 0.3s, border-color 0.3s;
   }
   
   p {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    font-family: cursive;
   }
   
   .upload-button {
@@ -38,10 +40,11 @@
     border: 2px solid #FFDAB9;
     color: #624612;
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 2rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
+    font-family: cursive;
   }
   
   .upload-button:hover {
