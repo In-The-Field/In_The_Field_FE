@@ -42,8 +42,8 @@
   border-color: #FBC4AB;
 }
 
-.homepage-btn:active,
-.my-field-guide-btn:active {
+.homepage-btn.active,
+.my-field-guide-btn.active {
   border-color: #624612;
 }
 
