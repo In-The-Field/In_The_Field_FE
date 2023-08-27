@@ -12,7 +12,7 @@ function App() {
    const handleError = (errorInfo) => {
     setError(errorInfo); 
     setShowError(true);
-  }
+  };
 
   return (
     <>
@@ -25,6 +25,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;
