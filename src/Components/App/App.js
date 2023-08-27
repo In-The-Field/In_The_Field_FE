@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import {Route, Routes } from 'react-router-dom'; 
 import './App.css';
 import HomePage from '../HomePage/HomePage'; 
 import ErrorPage from '../ErrorPage/ErrorPage';
-import Nav from '../Nav/Nav';
+import Nav from '../Nav/Nav'
 
 function App() {
-  const [showError, setShowError] = useState(false); // State to control error rendering
+  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleError = () => {
+   const handleError = (errorInfo) => {
+    setError(errorInfo); 
     setShowError(true);
   }
 
   return (
- <>
-   <Nav />
-    {showError && <ErrorPage />}
-    <Router>
+    <>
+      <Nav />
+      {showError && <ErrorPage error={error} />} 
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/error" element={<ErrorPage />} />
+        <Route path="/" element={<HomePage error={error} />} /> 
+        <Route path="/error" element={<ErrorPage error={error} />} /> 
       </Routes>
-    </Router>
-  </>
+    </>
   );
 }
+
 
 export default App;

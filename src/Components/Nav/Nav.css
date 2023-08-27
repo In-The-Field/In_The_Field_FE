@@ -4,6 +4,7 @@
   position: relative;
   border: 1px solid black;
   grid-template-columns: 1fr auto 1fr;
+  background-color: rgba(242, 201, 185, 0.8);
 }
 
 .logo {
@@ -18,19 +19,31 @@
   gap: 10px;
   grid-column: 3;
   justify-self: center;
+  margin-left: 14rem;
 }
 
 .homepage-btn,
 .my-field-guide-btn {
-  text-decoration: none;
-  border: 1px solid black;
-  padding: 5px 10px;
+  background-color: #FBC4AB;
+  border: 2px solid #FFDAB9;
+  color: #624612;
+  padding: 10px 20px;
+  font-size: 1.5rem;
   border-radius: 5px;
-  transition: 0.3s;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  text-decoration: none;
+  font-family: cursive;
 }
 
 .homepage-btn:hover,
 .my-field-guide-btn:hover {
-  background-color: coral;
-  border-color: #888;
+  background-color: #FFDAB9;
+  border-color: #FBC4AB;
 }
+
+.homepage-btn.active,
+.my-field-guide-btn.active {
+  border-color: #624612;
+}
+
