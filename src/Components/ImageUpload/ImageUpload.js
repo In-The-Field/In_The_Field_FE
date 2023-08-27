@@ -59,16 +59,27 @@ const ImageUpload = () => {
 
   return (
     <form id="photo-form" onDragEnter={handleDrag} onSubmit={(e) => e.preventDefault()}>
-      <input type="file" ref={userFileInput} id="photo-input" multiple={false} accept="image/*" onChange={handleFileUpload} />
-        <div  className="label-photo-input">
-          <p>Drag and Drop your mushroom find</p>
-            <button  className="upload-button" onClick={handleClick} >Upload Photo </button>
-        </div>
-        <p>{error}</p>
-      {userImage && <img src={userImage} />}
-      {/* above is only for viewing image droppings change state */}
-      {isDragging && <div className="drag-active" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div> }
-    </form>
+    <input type="file" ref={userFileInput} id="photo-input" multiple={false} accept="image/*" onChange={handleFileUpload} />
+    {userImage ? (
+      <div>
+        <img src={userImage} />
+        <button className="upload-button" onClick={handleClick}>
+          Upload Photo
+        </button>
+      </div>
+    ) : (
+      <div className="label-photo-input">
+        <p>Drag and Drop your mushroom find</p>
+        <button className="upload-button" onClick={handleClick}>
+          Upload Photo
+        </button>
+      </div>
+    )}
+    <p>{error}</p>
+    {isDragging && (
+      <div className="drag-active" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div>
+    )}
+  </form>
   );
 };
 
