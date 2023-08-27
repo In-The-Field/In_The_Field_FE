@@ -1,0 +1,36 @@
+.nav-container {
+  display: grid;
+  align-items: center;
+  position: relative;
+  border: 1px solid black;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  grid-column: 2;
+  justify-self: center;
+}
+
+.link-container {
+  display: flex;
+  gap: 10px;
+  grid-column: 3;
+  justify-self: center;
+}
+
+.homepage-btn,
+.my-field-guide-btn {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.homepage-btn:hover,
+.my-field-guide-btn:hover {
+  background-color: coral;
+  border-color: #888;
+}
