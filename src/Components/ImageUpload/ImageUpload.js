@@ -71,7 +71,6 @@ const ImageUpload = () => {
       </div>
     ) : (
       <div className="label-photo-input">
-        <p>Drag and Drop your mushroom find</p>
         <button className="upload-button" onClick={handleClick}>
           Upload Photo
         </button>
