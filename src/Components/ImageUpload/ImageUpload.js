@@ -64,7 +64,7 @@ const ImageUpload = () => {
     <input type="file" ref={userFileInput} id="photo-input" multiple={false} accept="image/*" onChange={handleFileUpload} />
     {userImage ? (
       <div>
-        <img src={userImage} alt="mushroom image" />
+        <img src={userImage} className="user-image" alt="mushroom image" />
         <button className="upload-button" onClick={handleClick}>
           Upload Photo
         </button>
