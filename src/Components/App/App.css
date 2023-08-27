@@ -1,0 +1,10 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    background: url('/src/images/pexels-pixabay-53154.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: rgba(1, 0, 0, 1.0); /* Adjust the opacity as needed */
+  }

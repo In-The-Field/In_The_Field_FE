@@ -1,0 +1,66 @@
+/* HomePage.css */
+
+.home-page-container {
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content-container {
+    background-color: rgba(242, 201, 185, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
+    color:#624612 ;
+}
+  
+  h1 {
+    background-color: #FBC4AB;
+    border: 2px solid #FFDAB9;
+    color: #624612;
+    padding: 10px 20px;
+    font-size: 2rem;
+    border-radius: 5px;
+    font-family: cursive;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: cursive;
+  }
+  
+  .upload-button {
+    background-color: #FBC4AB;
+    border: 2px solid #FFDAB9;
+    color: #624612;
+    padding: 10px 20px;
+    font-size: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-family: cursive;
+  }
+  
+  .upload-button:hover {
+    background-color: #FFDAB9;
+    border-color: #FBC4AB;
+  }
+  
+  .label-photo-input {
+    border: 5px dashed #FFDAB9;
+    border-radius: 10px;
+    color: #888;
+  }
+  
+  .drag-active {
+    background-color: rgba(251, 196, 171, 0.2);
+    border: 2px dashed #FBC4AB;
+    border-radius: 10px;
+  }
+  
