@@ -6,12 +6,9 @@ const ImageUpload = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [base64Image, setBase64Image] = useState('')
   const userFileInput = useRef(null)
-  const [error, setError] = useState(null)
+  const [imageError, setImageError] = useState(null)
 
-  const createUrl = (file) => {
-    return URL.createObjectURL(file)
-  }
-  
+
   const handleDrag = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -31,13 +28,18 @@ const ImageUpload = () => {
       const createBase64 = btoa(newImage)
       setUserImage(newImage);
       setBase64Image(createBase64)
-      setError(null) 
+      setImageError(null) 
     } else {
       setUserImage(null)
       setBase64Image(null)
-      setError("This is not an image file please try again")
+      setImageError("This is not an image file please try again")
     }
   }
+
+  const createUrl = (file) => {
+    return URL.createObjectURL(file)
+  }
+  
 
   const handleClick = () => {
     userFileInput.current.click();
@@ -49,11 +51,11 @@ const ImageUpload = () => {
       const createBase64 = btoa(newImage)
       setUserImage(newImage);
       setBase64Image(createBase64)
-      setError(null)
+      setImageError(null)
     } else {
       setUserImage(null)
       setBase64Image(null)
-      setError("This is not an image file please try again")
+      setImageError("This is not an image file please try again")
     }
   };
 
@@ -62,7 +64,7 @@ const ImageUpload = () => {
     <input type="file" ref={userFileInput} id="photo-input" multiple={false} accept="image/*" onChange={handleFileUpload} />
     {userImage ? (
       <div>
-        <img src={userImage} />
+        <img src={userImage} alt="mushroom image" />
         <button className="upload-button" onClick={handleClick}>
           Upload Photo
         </button>
@@ -75,7 +77,7 @@ const ImageUpload = () => {
         </button>
       </div>
     )}
-    <p>{error}</p>
+    <p>{imageError}</p>
     {isDragging && (
       <div className="drag-active" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div>
     )}
