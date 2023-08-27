@@ -7,20 +7,24 @@ import Nav from '../Nav/Nav'
 
 function App() {
   const [showError, setShowError] = useState(false);
-  const handleError = () => {
+  const [error, setError] = useState(null);
+
+   const handleError = (errorInfo) => {
+    setError(errorInfo); 
     setShowError(true);
   }
 
   return (
     <>
       <Nav />
-       {/* {showError && <ErrorPage />} */}
-         <Routes>
-           <Route path="/" element={<HomePage />} />
-           <Route path="/error" element={<ErrorPage />} />
-         </Routes>
-     </>
-     );
-   }
+      {showError && <ErrorPage error={error} />} 
+      <Routes>
+        <Route path="/" element={<HomePage error={error} />} /> 
+        <Route path="/error" element={<ErrorPage error={error} />} /> 
+      </Routes>
+    </>
+  );
+}
+
 
 export default App;
