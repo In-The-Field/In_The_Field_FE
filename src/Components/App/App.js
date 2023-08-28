@@ -8,6 +8,7 @@ import Nav from '../Nav/Nav'
 function App() {
   const [showError, setShowError] = useState(false);
   const [error, setError] = useState(null);
+  const [userImage, setUserImage] = useState(null);
 
    const handleError = (errorInfo) => {
     setError(errorInfo); 
@@ -19,7 +20,7 @@ function App() {
       <Nav />
       {showError && <ErrorPage error={error} />} 
       <Routes>
-        <Route path="/" element={<HomePage error={error} />} /> 
+        <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} />} /> 
         <Route path="/error" element={<ErrorPage error={error} />} /> 
       </Routes>
     </>

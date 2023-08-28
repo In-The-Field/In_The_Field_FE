@@ -4,8 +4,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import "./HomePage.css";
 import { useState } from "react";
 
-const HomePage = ({ error }) => {
-  const [userImage, setUserImage] = useState(null);
+const HomePage = ({ error, userImage, onImageUpload }) => {
 
   return (
     <div className="home-page-container">
@@ -14,7 +13,7 @@ const HomePage = ({ error }) => {
           <img className="user-image" src={userImage} alt="mushroom" />
           <button
             className="upload-new-button"
-            onClick={() => setUserImage(null)}
+            onClick={() => onImageUpload(null)}
           >
             Upload New Photo
           </button>
@@ -29,7 +28,7 @@ const HomePage = ({ error }) => {
             <>
               <h1>Welcome to In The Field!</h1>
               <p>Drag and Drop -or- Upload your mushroom image here!</p>
-              <ImageUpload onImageUpload={setUserImage} />
+              <ImageUpload onImageUpload={onImageUpload} />
             </>
           )}
         </div>
