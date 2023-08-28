@@ -8,7 +8,7 @@ const HomePage = ({ error }) => {
     <div className="home-page-container">
       <div className="content-container">
       {error ? (
-          <ErrorPage error={error} /> // Render ErrorPage component if error
+          <ErrorPage error={error} /> 
         ) : (
           <>
             <h1>Welcome to In The Field!</h1>
