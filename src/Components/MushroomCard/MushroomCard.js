@@ -2,6 +2,7 @@ import React from "react";
 import "../MushroomCard.css";
 import ToggleSave from "./ToggleFav";
 import { formatProbability } from "../../utils";
+import { useState } from "react";
 
 const MushroomCard = ({ image, latinName, commonNames, probability }) => {
   const [isFav, setIsFav] = useState(false);
@@ -14,8 +15,7 @@ const MushroomCard = ({ image, latinName, commonNames, probability }) => {
         <h2>{latinName}</h2>
         <p>{commonNames.join(", ")}</p>
       </div>
-      <img alt={latinName && commonNames} />
-      {/* need to add src to line 14 */}
+      <img src={image} alt={latinName && commonNames} />
       <p className='probability'>Probability: {displayProbability}%</p>
       <div className="toggle-container">
         <ToggleSave isFav={isFav} onToggle={() => setIsFav(!isFav)} />
