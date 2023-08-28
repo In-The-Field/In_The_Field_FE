@@ -67,7 +67,20 @@
     align-items: center;
     justify-content: center;
     width: 40%;
-    margin-right: auto;
+    margin: 50px auto 0 50px;
+    background-color: rgba(242, 201, 185, 0.8);
+    border-radius: 10px;
     padding: 20px;
   }
   
+  .upload-new-button {
+    background-color: #FBC4AB;
+    border: 2px solid #FFDAB9;
+    color: #624612;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-family: cursive;
+    margin-top: 10px;
+  }
