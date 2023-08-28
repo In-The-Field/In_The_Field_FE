@@ -5,6 +5,8 @@ import ToggleSave from "./ToggleFav";
 const MushroomCard = ({ image, latinName, commonNames, probability }) => {
   const [isFav, setIsFav] = useState(false);
 
+  
+
   return (
     <div className="mushroom-card">
       <div className="name-details">
@@ -21,6 +23,6 @@ const MushroomCard = ({ image, latinName, commonNames, probability }) => {
   );
 };
 
-//Depending on how we receive the data from BE, we might not need the .join... if they already give us a string containing all the latin names, that would be perfect
+
 
 export default MushroomCard;
