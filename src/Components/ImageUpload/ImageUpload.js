@@ -70,6 +70,12 @@ const ImageUpload = ({ onImageUpload }) => {
         >
           Upload Photo
         </button>
+        <input
+          type="file"
+          ref={userFileInput}
+          style={{ display: "none" }}
+          onChange={handleFileUpload}
+        />
       </div>
       <p>{imageError}</p>
       {isDragging && (
