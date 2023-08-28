@@ -1,5 +1,3 @@
-/* HomePage.css */
-
 .home-page-container {
     
     min-height: 100vh;
@@ -16,6 +14,7 @@
     text-align: center;
     box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
     color:#624612 ;
+    padding-bottom: 70px;
 }
   
   h1 {
@@ -39,7 +38,6 @@
     background-color: #FBC4AB;
     border: 2px solid #FFDAB9;
     color: #624612;
-    padding: 10px 20px;
     font-size: 2rem;
     border-radius: 5px;
     cursor: pointer;

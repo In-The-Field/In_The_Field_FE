@@ -21,23 +21,26 @@ const ImageUpload = () => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragging(false);
-    if (e.dataTransfer.files[0] && e.dataTransfer.files[0].type.includes("image")) {
+  
+    const droppedFile = e.dataTransfer.files[0];
+    
+    if (droppedFile && droppedFile.type.includes("jpeg")) {
       const reader = new FileReader();
       reader.onload = (event) => {
         const base64 = event.target.result;
         setUserImage(base64);
         setImageError(null);
-        console.log("Uploaded Base64 Image:", base64); // Log the base64 image data
+        console.log("Uploaded Base64 Image:", base64);
       };
-      reader.readAsDataURL(e.dataTransfer.files[0]);
-      console.log("data",reader.readAsDataURL(e.dataTransfer.files[0]))
+      reader.readAsDataURL(droppedFile);
     } else {
-      setImageError("This is not an image file please try again");
+      setImageError("Incorrect file type, please upload .jpeg or .jpg file and try again.");
     }
-  }
+  };
+  
 
   const handleFileUpload = (e) => {
-    if (e.target.files[0] && e.target.files[0].type.includes("image")) {
+    if (e.target.files[0] && e.target.files[0].type.includes("jpeg")) {
       const reader = new FileReader();
       reader.onload = (event) => {
         const base64 = event.target.result;
@@ -47,13 +50,13 @@ const ImageUpload = () => {
       };
       reader.readAsDataURL(e.target.files[0]);
     } else {
-      setImageError("This is not an image file please try again");
+      setImageError("Incorrect file type, please upload .jpeg or .jpg file and try again.");
     }
   }
 
   return (
     <form id="photo-form" onDragEnter={handleDrag} onSubmit={(e) => e.preventDefault()}>
-      <input type="file" ref={userFileInput} id="photo-input" multiple={false} accept="image/*" onChange={handleFileUpload} />
+      <input type="file" ref={userFileInput} id="photo-input" multiple={false} accept="image/jpeg, image/jpg" onChange={handleFileUpload} />
       {userImage ? (
         <div>
           <img src={userImage} className="user-image" alt="mushroom" />
