@@ -5,50 +5,48 @@ import logo from "../../images/logo.png";
 const DetailsPage = () => {
   return (
     <div className="details-container">
-      <div className="ba">
-      <div className="pic">
-        <img className="details-image" src={logo} alt="Logo" />
-      </div>
-      <div className="ma">
-        <div className="details-holder">
-          <div>
-            <h2>Amanita parcivolvata</h2>
+      <div className="image-latin-common-container">
+        <div className="pic">
+          <img className="details-image" src={logo} alt="Logo" />
+        </div>
+        <div className="latin-common-edibility-taxonomy">
+          <div className="name-taxonomy-cont">
+            <div className="name-holder">
+              <h2>Amanita parcivolvata</h2>
+              <p>False Caesar's Mushroom, Ringless False Fly Agaric</p>
+            </div>
+            <div className="taxonomy">
+              <h3>Taxonomy:</h3>
+              <p>Genus: "Amanita",</p>
+              <p>Order: "Agraicales",</p>
+              <p>Family: "Amanitaceae",</p>
+              <p>Phylum: "Basidiomycota",</p>
+              <p> Kingdom: "Fungi"</p>
+            </div>
+          </div>
+          <div className="info">
+            {/* <h4>Edibility:</h4> */}
+            <p><strong>Edibility: </strong> Edible when cooked</p>
+            {/* <h4>Characteristics:</h4> */}
+            <p><strong>Characteristics: </strong>
+              dict - hymenium attachment, hymenium type, mushroom cap shape,
+              mushroom ecological type, spore print color, stipe character
+            </p>
+            {/* <h4>Lookalike:</h4> */}
             <p>
-              Common Name: False Caesar's Mushroom, Ringless False Fly Agaric
+              <strong>Lookalike: </strong>list of dicts - mushrooms that are frequently confused with the
+              suggested species; each taxon contains entity_id, name and url
+            </p>
+            {/* <h4>Psychoactive:</h4> */}
+            <p>
+             <strong>Psychoactive: </strong>this mushroom causes poisoning that affects the nervous system
             </p>
           </div>
-          <div className="taxonomy">
-            <h3>Taxonomy:</h3>
-            <p>Genus: "Amanita",</p>
-            <p>Order: "Agraicales",</p>
-            <p>Family: "Amanitaceae",</p>
-            <p>Phylum: "Basidiomycota",</p>
-            <p> Kingdom: "Fungi"</p>
-          </div>
         </div>
-        <div className="info">
-          <h4>Edibility: Edible when cooked</h4>
-          <p>
-            Characteristics: dict - hymenium attachment, hymenium type, mushroom
-            cap shape, mushroom ecological type, spore print color, stipe
-            character
-          </p>
-          <p>
-            Lookalike: list of dicts - mushrooms that are frequently confused
-            with the suggested species; each taxon contains entity_id, name and
-            url
-          </p>
-          <p>
-            Psychoactive: this mushroom causes poisoning that affects the
-            nervous system
-          </p>
-        </div>
-      </div>
       </div>
       {/* Description is below everything else */}
       <div className="description">
-        <p>
-          Description: Amanita parcivolvata also known as ringless false fly
+        <p><strong>Description:</strong> Amanita parcivolvata also known as ringless false fly
           amanita, is a fungus that produces fruit bodies that vaguely resemble
           those of Amanita muscaria. It is differentiated, however, by its lack
           of an annulus, by the volval deposits on its stipe/base, and by its

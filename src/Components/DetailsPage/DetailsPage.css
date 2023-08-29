@@ -4,34 +4,36 @@ flex-direction: column;
 color: white;
 padding: 20px;
 text-align: center;
+height: 100vh;
+}
 
-}
-h2{
-  font-size: medium;
-}
 .pic {
   width: 40%;
 }
-.ba { 
+
+.image-latin-common-container { 
   display: flex;
   justify-content: space-between;
 }
 
-.ma {
+.latin-common-edibility-taxonomy {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
-  height: 62vh;
+  width: 61%;
+  height: 59vh;
   justify-content: space-around;
 }
+
 .details-image {
   height: 25rem;
   width: 25rem;
   background-color: white;
   
 }
-
+.info p {
+  margin: 10px 0; /* You can adjust the margin values as needed */
+}
 .taxonomy {
   background-color: rgba(242, 201, 185, 0.8);
   color:#624612 ;
@@ -41,7 +43,9 @@ h2{
   line-height: .2;
   margin: 0;
   font-size: small;
-  height: 9rem;
+  height: 8rem;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .info {
@@ -50,9 +54,10 @@ h2{
   box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   line-height: 1;
+  margin: 1rem;
 }
 
-.details-holder {
+.name-taxonomy-cont {
   display:flex;
   flex-direction: column;
   align-items:center;
@@ -63,13 +68,7 @@ h2{
   line-height: 1;
   width: 60%
 }
-/* .details-holder {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1rem;
-  align-items: center
 
-} */
 .description {
   background-color: rgba(242, 201, 185, 0.8);
   color:#624612 ;
