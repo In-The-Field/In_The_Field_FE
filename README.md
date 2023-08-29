@@ -2,6 +2,7 @@
 [![Forks](https://img.shields.io/github/forks/In-The-Field/In_The_Field_FE.svg)](https://github.com/In-The-Field/In_The_Field_FE/forks)
 [![Stargazers](https://img.shields.io/github/stars/In-The-Field/In_The_Field_FE.svg)](https://githuB.com/In-The-Field/In_The_Field_FE/stargazers)
 [![Issues](https://img.shields.io/github/issues/In-The-Field/In_The_Field_FE.svg)](https://github.com/In-The-Field/In_The_Field_FE/issues)
+[![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield)](https://circleci.com/gh/facebook/react)
 
 # In the Field
 
