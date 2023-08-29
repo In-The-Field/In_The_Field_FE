@@ -1,0 +1,81 @@
+.field-guide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .field-guide-content {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    overflow-y: scroll;
+    height: 80vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    scrollbar-color: #fbc4ab #ffdab9;
+    margin-bottom: 10rem;
+    gap: 15px;
+  }
+  
+  .field-guide-heading {
+    background-color: #fbc4ab;
+    border: 2px solid #ffdab9;
+    color: #624612;
+    padding: 10px 20px;
+    font-size: 2rem;
+    border-radius: 5px;
+    font-family: cursive;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .field-guide-paragraph {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: cursive;
+  }
+  
+  .field-guide-upload-button {
+    background-color: #fbc4ab;
+    border: 2px solid #ffdab9;
+    color: #624612;
+    font-size: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-family: cursive;
+  }
+  
+  .field-guide-upload-button:hover {
+    background-color: #ffdab9;
+    border-color: #fbc4ab;
+  }
+  
+  .field-guide-label-photo-input {
+    border: 5px dashed #ffdab9;
+    border-radius: 10px;
+    color: #888;
+  }
+  
+  .field-guide-drag-active {
+    background-color: rgba(251, 196, 171, 0.2);
+    border: 2px dashed #fbc4ab;
+    border-radius: 10px;
+  }
+
+  .field-guide-content::-webkit-scrollbar-thumb {
+    background-color: #fbc4ab;
+    border-radius: 10px;
+  }
+  
+  .field-guide-content::-webkit-scrollbar-track {
+    background-color: #ffdab9;
+  }
+  
+  .field-guide-content::-webkit-scrollbar {
+    width: 10px; 
+    background-color: #ffdab9; 
+  }

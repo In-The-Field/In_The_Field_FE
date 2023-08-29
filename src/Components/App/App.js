@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {Route, Routes } from 'react-router-dom'; 
-import './App.css';
 import HomePage from '../HomePage/HomePage'; 
 import ErrorPage from '../ErrorPage/ErrorPage';
+import FieldGuide from '../FieldGuide/FieldGuide';
+import './App.css';
 import Nav from '../Nav/Nav'
 import { Link } from 'react-router-dom';
 import { mockMushroomCards } from '../../mockData.js';
@@ -38,7 +39,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
         <Route path="/error" element={<ErrorPage error={error} />} /> 
+        <Route path="/myfieldguide" element={<FieldGuide error={error} renderMushroomCards={renderMushroomCards} />} />
       </Routes>
+
     </>
   );
 }

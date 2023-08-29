@@ -24,6 +24,4 @@ const MushroomCard = ({ image, latinName, commonNames, probability }) => {
   );
 };
 
-
-
 export default MushroomCard;
