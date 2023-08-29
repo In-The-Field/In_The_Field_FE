@@ -34,4 +34,4 @@ const mockMushroomCards = [
   },
 ];
 
-export default mockMushroomCards
+export { mockMushroomCards }

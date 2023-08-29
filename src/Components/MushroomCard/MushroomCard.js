@@ -1,6 +1,6 @@
 import React from "react";
-import "../MushroomCard.css";
-import ToggleSave from "./ToggleFav";
+import "./MushroomCard.css";
+import ToggleSave from '../ToggleSave/ToggleSave';
 import { formatProbability } from "../../utils";
 import { useState } from "react";
 

@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import ImageUpload from "../ImageUpload/ImageUpload";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import "./HomePage.css";
-import { useState } from "react";
+import { mockMushroomCards } from '../../mockData.js';
+import { Link } from 'react-router-dom';
+import MushroomCard from "../MushroomCard/MushroomCard";
+
 
 const HomePage = ({ error, userImage, onImageUpload }) => {
+  // const [mushrooms, setMushrooms] = useState([]);
+
+  const renderMushroomCards = () => {
+    return mockMushroomCards.map(mushroom => (
+      <Link to={`details/${mushroom.id}`} key={mushroom.id}> 
+        <MushroomCard
+            image={mushroom.image}
+            latinName={mushroom.latinName}
+            commonNames={mushroom.commonNames}
+            probability={mushroom.probability}
+        />
+      </Link>
+    ));
+  };
 
   return (
     <div className="home-page-container">
@@ -29,6 +46,7 @@ const HomePage = ({ error, userImage, onImageUpload }) => {
               <h1>Welcome to In The Field!</h1>
               <p>Drag and Drop -or- Upload your mushroom image here!</p>
               <ImageUpload onImageUpload={onImageUpload} />
+              {renderMushroomCards()}
             </>
           )}
         </div>
@@ -38,19 +56,3 @@ const HomePage = ({ error, userImage, onImageUpload }) => {
 };
 
 export default HomePage;
-
-// const [mushrooms, setMushrooms] = useState([]);
-
-// const renderMushroomCards = () => {
-//         return mushrooms.map(mushroom => (
-  //         <Link to="details:id"
-//             <MushroomCard
-//                 key={mushroom.id}
-//                 image={mushroom.image}
-//                 latinName={mushroom.latinName}
-//                 commonNames={mushroom.commonNames}
-//                 probability={mushroom.probability}
-//             />
-//           />
-//       ));
-// }
