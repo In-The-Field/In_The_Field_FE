@@ -32,8 +32,9 @@ height: 100vh;
   
 }
 .info p {
-  margin: 10px 0; /* You can adjust the margin values as needed */
+  margin: 10px 0; 
 }
+
 .taxonomy {
   background-color: rgba(242, 201, 185, 0.8);
   color:#624612 ;

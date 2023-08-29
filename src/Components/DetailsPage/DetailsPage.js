@@ -25,26 +25,21 @@ const DetailsPage = () => {
             </div>
           </div>
           <div className="info">
-            {/* <h4>Edibility:</h4> */}
             <p><strong>Edibility: </strong> Edible when cooked</p>
-            {/* <h4>Characteristics:</h4> */}
             <p><strong>Characteristics: </strong>
               dict - hymenium attachment, hymenium type, mushroom cap shape,
               mushroom ecological type, spore print color, stipe character
             </p>
-            {/* <h4>Lookalike:</h4> */}
             <p>
               <strong>Lookalike: </strong>list of dicts - mushrooms that are frequently confused with the
               suggested species; each taxon contains entity_id, name and url
             </p>
-            {/* <h4>Psychoactive:</h4> */}
             <p>
              <strong>Psychoactive: </strong>this mushroom causes poisoning that affects the nervous system
             </p>
           </div>
         </div>
       </div>
-      {/* Description is below everything else */}
       <div className="description">
         <p><strong>Description:</strong> Amanita parcivolvata also known as ringless false fly
           amanita, is a fungus that produces fruit bodies that vaguely resemble
