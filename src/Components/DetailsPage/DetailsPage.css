@@ -15,17 +15,15 @@ h2{
 .ba { 
   display: flex;
   justify-content: space-between;
-  /* width: 500px */
 }
-/* .img-dets {
-  display: flex;
-} */
+
 .ma {
-  /* display: flex; */
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 60%;
+  height: 62vh;
+  justify-content: space-around;
 }
 .details-image {
   height: 25rem;
@@ -63,6 +61,7 @@ h2{
   box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   line-height: 1;
+  width: 60%
 }
 /* .details-holder {
   display: flex;

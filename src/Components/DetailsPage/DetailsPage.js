@@ -29,12 +29,12 @@ const DetailsPage = () => {
         <div className="info">
           <h4>Edibility: Edible when cooked</h4>
           <p>
-            characteristics: dict - hymenium attachment, hymenium type, mushroom
+            Characteristics: dict - hymenium attachment, hymenium type, mushroom
             cap shape, mushroom ecological type, spore print color, stipe
             character
           </p>
           <p>
-            lookalike: list of dicts - mushrooms that are frequently confused
+            Lookalike: list of dicts - mushrooms that are frequently confused
             with the suggested species; each taxon contains entity_id, name and
             url
           </p>
