@@ -1,9 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
+  overflow: hidden;
   position: relative;
-  background: url('/src/images/pexels-pixabay-53154.jpg') no-repeat center center fixed;
+  background: url('/src/Components/images/pexels-pixabay-53154.jpg') no-repeat center center fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
