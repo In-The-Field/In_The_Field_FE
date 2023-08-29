@@ -1,0 +1,15 @@
+.toggle-save-container {
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .toggle-image {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s;
+    
+  }
+  
+  .toggled-on {
+    transform: rotate(20deg);
+  }
