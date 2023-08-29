@@ -39,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
         <Route path="/error" element={<ErrorPage error={error} />} /> 
-        <Route path="/myfieldguide" element={<FieldGuide />} /> 
+        <Route path="/myfieldguide" element={<FieldGuide error={error} renderMushroomCards={renderMushroomCards} />} />
       </Routes>
 
     </>
