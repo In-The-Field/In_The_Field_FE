@@ -5,11 +5,6 @@ import ToggleSave from "../ToggleSave/ToggleSave";
 const MushroomCard = ({ image, latinName, commonNames, probability }) => {
   const [isFav, setIsFav] = useState(false);
 
-  const toggleImage = () => {
-    setIsFav(!isFav);
-  };
-
-
   return (
     <div className="mushroom-card">
       <div className="card-content">
@@ -21,11 +16,10 @@ const MushroomCard = ({ image, latinName, commonNames, probability }) => {
             <p>{commonNames}</p>
           )}
         </div>
-        <img src={image} alt={latinName && commonNames} className="mushroom-image" /> {/* Add the class name here */}
+        <img src={image} alt={latinName && commonNames} className="mushroom-image" />
         <p className='probability'>Probability: {probability * 100}%</p>
         <div className="toggle-container">
-          <ToggleSave isFav={isFav} onToggle={() => setIsFav(!isFav)} />
-          
+          <ToggleSave />
         </div>
       </div>
     </div>
