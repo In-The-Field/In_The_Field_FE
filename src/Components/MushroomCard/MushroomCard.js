@@ -13,7 +13,7 @@ const MushroomCard = ({ image, latinName, commonNames, probability }) => {
     <div className="mushroom-card">
       <div className="name-details">
         <h2>{latinName}</h2>
-        <p>{commonNames.join(", ")}</p>
+        <p>{commonNames}</p>
       </div>
       <img src={image} alt={latinName && commonNames} />
       <p className='probability'>Probability: {displayProbability}%</p>
