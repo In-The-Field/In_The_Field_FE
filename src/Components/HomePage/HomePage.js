@@ -42,9 +42,8 @@ export default HomePage;
 // const [mushrooms, setMushrooms] = useState([]);
 
 // const renderMushroomCards = () => {
-  //<Link
 //         return mushrooms.map(mushroom => (
-  //<Link
+  //         <Link to="details:id"
 //             <MushroomCard
 //                 key={mushroom.id}
 //                 image={mushroom.image}
@@ -52,6 +51,6 @@ export default HomePage;
 //                 commonNames={mushroom.commonNames}
 //                 probability={mushroom.probability}
 //             />
-// />
+//           />
 //       ));
 // }
