@@ -2,11 +2,12 @@ import React from 'react';
 import ImageUpload from '../ImageUpload/ImageUpload';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import './HomePage.css';
+import DetailsPage from '../DetailsPage/DetailsPage';
 
 const HomePage = ({ error }) => {
   return (
     <div className="home-page-container">
-      <div className="content-container">
+      {/* <div className="content-container">
       {error ? (
           <ErrorPage error={error} /> 
         ) : (
@@ -16,7 +17,8 @@ const HomePage = ({ error }) => {
             <ImageUpload />
           </>
         )}
-      </div>
+      </div> */}
+      <DetailsPage />
     </div>
   );
   
