@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
-import "../MushroomCard/MushroomCard.css";
-import ToggleSave from "../ToggleSave/ToggleSave";
+import React from "react";
+import "./MushroomCard.css";
+import ToggleSave from '../ToggleSave/ToggleSave';
+import { formatProbability } from "../../utils";
+import { useState } from "react";
 
 const MushroomCard = ({ image, latinName, commonNames, probability }) => {
   const [isFav, setIsFav] = useState(false);
 
+  const displayProbability = formatProbability(probability);
+
   return (
     <div className="mushroom-card">
-      <div className="card-content">
-        <div className="name-details">
-          <h2>{latinName}</h2>
-          {Array.isArray(commonNames) ? (
-            <p>{commonNames.join(", ")}</p>
-          ) : (
-            <p>{commonNames}</p>
-          )}
-        </div>
-        <img src={image} alt={latinName && commonNames} className="mushroom-image" />
-        <p className='probability'>Probability: {probability * 100}%</p>
-        <div className="toggle-container">
-          <ToggleSave />
-        </div>
+      <div className="name-details">
+        <h2>{latinName}</h2>
+        <p>{commonNames}</p>
+      </div>
+      <img src={image} alt={latinName && commonNames} />
+      <p className='probability'>Probability: {displayProbability}%</p>
+      <div className="toggle-container">
+        <ToggleSave isFav={isFav} onToggle={() => setIsFav(!isFav)} />
       </div>
     </div>
   );

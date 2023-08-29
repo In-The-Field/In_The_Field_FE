@@ -21,11 +21,14 @@
 }
 
 .upload-button {
+  background-color: #FBC4AB;
+  border: 2px solid #FFDAB9;
+  color: #624612;
+  font-size: 2rem;
+  border-radius: 5px;
   cursor: pointer;
-  padding: 0.25rem;
-  font-size: 1rem;
-  font-family: 'Oswald', sans-serif;
-  background-color: transparent;
+  transition: background-color 0.3s, border-color 0.3s;
+  font-family: cursive;
 }
 
 .drag-active {
@@ -42,3 +45,4 @@
   height: 456px;
   width: 345px;
 }
+
