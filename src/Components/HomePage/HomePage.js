@@ -3,13 +3,11 @@ import ImageUpload from "../ImageUpload/ImageUpload";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import "./HomePage.css";
 
-
 const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
-
   return (
     <div className="home-page-container">
       {userImage ? (
-        <>
+        <div className="homepage-content-container">
           <div className="homepage-left-container">
             <img className="user-image" src={userImage} alt="mushroom" />
             <button
@@ -19,10 +17,10 @@ const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
               Upload New Photo
             </button>
           </div>
-          <div className='homepage-right-container'>
+          <div className="homepage-right-container">
             {renderMushroomCards()}
           </div>
-        </>
+        </div>
       ) : null}
 
       {!userImage && (

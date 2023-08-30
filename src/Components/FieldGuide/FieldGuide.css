@@ -17,8 +17,10 @@
     flex-wrap: wrap;
     justify-content: center;
     scrollbar-color: #fbc4ab #ffdab9;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
     gap: 15px;
+    background-color: rgba(242, 201, 185, 0.8);
+    border: 5px solid #ffdab9;
   }
   
   .field-guide-heading {
