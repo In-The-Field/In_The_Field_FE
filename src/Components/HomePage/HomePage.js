@@ -1,27 +1,14 @@
-import React from 'react';
-import ImageUpload from '../ImageUpload/ImageUpload';
-import ErrorPage from '../ErrorPage/ErrorPage';
-import './HomePage.css';
-import DetailsPage from '../DetailsPage/DetailsPage';
+import React, { useState } from "react";
+import ImageUpload from "../ImageUpload/ImageUpload";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import "./HomePage.css";
+
 
 const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
 
-
   return (
-    <div >
-      {/* <div className="content-container">
-      {error ? (
-          <ErrorPage error={error} /> 
-        ) : (
-          <>
-            <h1>Welcome to In The Field!</h1>
-            <p>Drag and Drop -or- Upload your mushroom image here!</p>
-            <ImageUpload />
-          </>
-        )}
-      </div> */}
-      <DetailsPage />
-      {/* {userImage ? (
+    <div className="home-page-container">
+      {userImage ? (
         <>
           <div className="homepage-left-container">
             <img className="user-image" src={userImage} alt="mushroom" />
@@ -51,7 +38,6 @@ const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
           )}
         </div>
       )}
-    </div> */}
     </div>
   );
 };
