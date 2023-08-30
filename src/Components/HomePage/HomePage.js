@@ -8,7 +8,7 @@ const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
 
 
   return (
-    <div className="home-page-container">
+    <div >
       {/* <div className="content-container">
       {error ? (
           <ErrorPage error={error} /> 
@@ -20,8 +20,8 @@ const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
           </>
         )}
       </div> */}
-      {/* <DetailsPage /> */}
-      {userImage ? (
+      <DetailsPage />
+      {/* {userImage ? (
         <>
           <div className="homepage-left-container">
             <img className="user-image" src={userImage} alt="mushroom" />
@@ -51,6 +51,7 @@ const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
           )}
         </div>
       )}
+    </div> */}
     </div>
   );
 };

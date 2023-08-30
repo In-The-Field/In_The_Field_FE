@@ -1,8 +1,8 @@
 import React from "react";
 import "./DetailsPage.css";
-import logo from "../../images/logo.png";
+import logo from '../images/logo.png';
 
-const DetailsPage = () => {
+const DetailsPage = ({}) => {
   return (
     <div className="details-container">
       <div className="image-latin-common-container">
@@ -41,16 +41,7 @@ const DetailsPage = () => {
         </div>
       </div>
       <div className="description">
-        <p><strong>Description:</strong> Amanita parcivolvata also known as ringless false fly
-          amanita, is a fungus that produces fruit bodies that vaguely resemble
-          those of Amanita muscaria. It is differentiated, however, by its lack
-          of an annulus, by the volval deposits on its stipe/base, and by its
-          pileal striations. It occasionally lacks a stipe bulb entirely,
-          instead just tapering to a point in the ground with powdery volval
-          deposits on its surface. It ranges from 3–12 cm (1.2–4.7 in) in length
-          and is occasional to common in the Southeastern United States,
-          occurring primarily in Quercus forests though it has been observed in
-          forests with a mix of conifers and oaks.
+        <p><strong>Description:</strong> {description}
         </p>
       </div>
     </div>
