@@ -1,0 +1,48 @@
+.mushroom-card {
+    background-color: rgba(242, 201, 185, 0.8);
+    border: 5px solid #ffdab9;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    height: 26em;
+    width: 15em;
+  }
+
+  .mushroom-image {
+    max-width: 100%;
+    height: 200px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .name-details {
+    text-align: center;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  .probability {
+    font-size: 14px;
+    color: #624612;
+  }
+  
+  .toggle-container {
+    margin-top: 10px;
+  }
+  
+  h2{
+    font-family: cursive;
+    color: #624612;
+  }
