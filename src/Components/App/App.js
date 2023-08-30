@@ -5,7 +5,7 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import FieldGuide from '../FieldGuide/FieldGuide';
 import './App.css';
 import Nav from '../Nav/Nav'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { mockMushroomCards } from '../../mockData.js';
 import MushroomCard from "../MushroomCard/MushroomCard";
 
@@ -16,14 +16,14 @@ function App() {
 
   const renderMushroomCards = () => {
     return mockMushroomCards.map(mushroom => (
-      <Link to={`details/${mushroom.id}`} key={mushroom.id}> 
+      <NavLink to={`details/${mushroom.id}`} key={mushroom.id} className="custom-nav-link">
         <MushroomCard
-            image={mushroom.image}
-            latinName={mushroom.latinName}
-            commonNames={mushroom.commonNames}
-            probability={mushroom.probability}
+          image={mushroom.image}
+          latinName={mushroom.latinName}
+          commonNames={mushroom.commonNames}
+          probability={mushroom.probability}
         />
-      </Link>
+      </NavLink>
     ));
   };
 
