@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Route, Routes } from 'react-router-dom'; 
 import HomePage from '../HomePage/HomePage'; 
 import ErrorPage from '../ErrorPage/ErrorPage';
@@ -13,6 +13,7 @@ import ToggleSave from '../ToggleSave/ToggleSave';
 
 import { useQuery } from '@apollo/client';
 import GET_MUSHROOM_MATCHES from '../../queries.js'
+// import { useEffect } from 'react';
 
 
 function App() {
@@ -25,23 +26,26 @@ function App() {
     skip: !userImage,
   });
   
-  if (queryError) {
-    console.error("There was an error fetching data:", queryError);
-    setError(queryError.message);
-    setShowError(true);
-  }
+  useEffect(() => {
+    if (queryError) {
+      console.error("There was an error fetching data:", queryError);
+      setError(queryError.message);
+      setShowError(true);
+    }
+  }, [queryError])
 
  const renderMushroomCards = () => {
 
   if (loading) return <p>Loading...</p>; 
-  if (!data || !data.matches) return <p>No mushrooms found.</p>;
+  if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
 
   console.log('data', data)
 
-    return data.matches.map((mushroom) => (
+    return data.mushrooms.map((mushroom) => (
       <div className="mushroom-card-wrapper">
         <NavLink to={`details/${mushroom.id}`} className="custom-nav-link">
           <MushroomCard
+            id={mushroom.id}
             key={mushroom.apiId}
             image={mushroom.photo}
             latinName={mushroom.latinName}
