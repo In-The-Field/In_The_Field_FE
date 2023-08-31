@@ -5,26 +5,30 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import FieldGuide from '../FieldGuide/FieldGuide';
 import './App.css';
 import Nav from '../Nav/Nav'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { mockMushroomCards } from '../../mockData.js';
 import MushroomCard from "../MushroomCard/MushroomCard";
 import DetailsPage from '../DetailsPage/DetailsPage';
+import ToggleSave from '../ToggleSave/ToggleSave';
 
 function App() {
   const [showError, setShowError] = useState(false);
   const [error, setError] = useState(null);
   const [userImage, setUserImage] = useState(null);
 
-  const renderMushroomCards = () => {
-    return mockMushroomCards.map(mushroom => (
-      <Link to={`details/${mushroom.id}`} key={mushroom.id}> 
-        <MushroomCard
+ const renderMushroomCards = () => {
+    return mockMushroomCards.map((mushroom) => (
+      <div className="mushroom-card-wrapper" key={mushroom.id}>
+        <NavLink to={`details/${mushroom.id}`} className="custom-nav-link">
+          <MushroomCard
             image={mushroom.image}
             latinName={mushroom.latinName}
             commonNames={mushroom.commonNames}
             probability={mushroom.probability}
-        />
-      </Link>
+          />
+        </NavLink>
+        <ToggleSave />
+      </div>
     ));
   };
 
