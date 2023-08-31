@@ -24,15 +24,12 @@ function App() {
     variables: { image: userImage },
     skip: !userImage,
   });
-
-  
   
   if (queryError) {
     console.error("There was an error fetching data:", queryError);
     setError(queryError.message);
     setShowError(true);
   }
-
 
  const renderMushroomCards = () => {
 
@@ -42,9 +39,10 @@ function App() {
   console.log('data', data)
 
     return data.matches.map((mushroom) => (
-      <div className="mushroom-card-wrapper" key={mushroom.id}>
+      <div className="mushroom-card-wrapper">
         <NavLink to={`details/${mushroom.id}`} className="custom-nav-link">
           <MushroomCard
+            key={mushroom.apiId}
             image={mushroom.photo}
             latinName={mushroom.latinName}
             commonNames={mushroom.commonName}
