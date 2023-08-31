@@ -8,6 +8,7 @@ import Nav from '../Nav/Nav'
 import { NavLink } from 'react-router-dom';
 import { mockMushroomCards } from '../../mockData.js';
 import MushroomCard from "../MushroomCard/MushroomCard";
+import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
         <Route path="/error" element={<ErrorPage error={error} />} /> 
         <Route path="/myfieldguide" element={<FieldGuide error={error} renderMushroomCards={renderMushroomCards} />} />
+        <Route path="/details/:id" element={<DetailsPage />} />
       </Routes>
 
     </>
