@@ -8,6 +8,7 @@ import Nav from '../Nav/Nav'
 import { Link } from 'react-router-dom';
 import { mockMushroomCards } from '../../mockData.js';
 import MushroomCard from "../MushroomCard/MushroomCard";
+import DetailsPage from '../DetailsPage/DetailsPage';
 
 function App() {
   const [showError, setShowError] = useState(false);
