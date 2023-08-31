@@ -11,21 +11,43 @@ import MushroomCard from "../MushroomCard/MushroomCard";
 import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
 
+import { useQuery } from '@apollo/client';
+import GET_MUSHROOM_MATCHES from '../../queries.js'
+
 
 function App() {
   const [showError, setShowError] = useState(false);
   const [error, setError] = useState(null);
   const [userImage, setUserImage] = useState(null);
 
+  const { loading, error: queryError, data } = useQuery(GET_MUSHROOM_MATCHES, {
+    variables: { image: userImage },
+    skip: !userImage,
+  });
+
+  
+  
+  if (queryError) {
+    console.error("There was an error fetching data:", queryError);
+    setError(queryError.message);
+    setShowError(true);
+  }
+
 
  const renderMushroomCards = () => {
-    return mockMushroomCards.map((mushroom) => (
+
+  if (loading) return <p>Loading...</p>; 
+  if (!data || !data.matches) return <p>No mushrooms found.</p>;
+
+  console.log('data', data)
+
+    return data.matches.map((mushroom) => (
       <div className="mushroom-card-wrapper" key={mushroom.id}>
         <NavLink to={`details/${mushroom.id}`} className="custom-nav-link">
           <MushroomCard
-            image={mushroom.image}
+            image={mushroom.photo}
             latinName={mushroom.latinName}
-            commonNames={mushroom.commonNames}
+            commonNames={mushroom.commonName}
             probability={mushroom.probability}
           />
         </NavLink>
