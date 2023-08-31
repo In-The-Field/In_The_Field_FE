@@ -1,15 +1,33 @@
 .toggle-save-container {
-    cursor: pointer;
-    display: inline-block;
-  }
-  
-  .toggle-image {
-    width: 40px;
-    height: auto;
-    transition: transform 0.3s;
-    
-  }
-  
-  .toggled-on {
-    transform: rotate(20deg);
-  }
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 2; 
+  margin-bottom: 20px;
+  background: rgba(242, 201, 185, 0.8);
+  border: 2px solid #624612;;
+  height: 40px;
+  border-radius: 18px;
+}
+
+.toggle-background {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.toggle-image {
+  width: 36px; 
+  margin-top: 0px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.toggled-on {
+  transform: rotate(45deg);
+}

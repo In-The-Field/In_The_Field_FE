@@ -17,9 +17,6 @@ const MushroomCard = ({ image, latinName, commonNames, probability }) => {
       </div>
       <img src={image} alt={latinName && commonNames} />
       <p className='probability'>Probability: {displayProbability}%</p>
-      <div className="toggle-container">
-        <ToggleSave isFav={isFav} onToggle={() => setIsFav(!isFav)} />
-      </div>
     </div>
   );
 };

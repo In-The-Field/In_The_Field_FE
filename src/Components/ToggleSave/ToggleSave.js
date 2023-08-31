@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import toggleOnImage from '../images/image_png.png';
-import toggleOffImage from '../images/color toggle (1).png';
-import '../ToggleSave/ToggleSave.css'
+import React, { useState } from "react";
+import toggleOnImage from "../images/image_png.png";
+import toggleOffImage from "../images/color toggle (1).png";
+import "../ToggleSave/ToggleSave.css";
 
 const ToggleSave = () => {
   const [isToggled, setIsToggled] = useState(false);
