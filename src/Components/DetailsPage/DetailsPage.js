@@ -1,7 +1,7 @@
 import React from "react";
 import "./DetailsPage.css";
 
-const DetailsPage = ({ latinName, commonName, edibility, taxonomy, photo, characteristic }) => {
+const DetailsPage = ({ latinName, commonName, edibility, taxonomy, photo, characteristic, lookalike, psychoactive, description }) => {
   return (
     <div className="details-container">
       <div className="image-latin-common-container">
