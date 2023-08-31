@@ -45,6 +45,7 @@ function App() {
       <div className="mushroom-card-wrapper">
         <NavLink to={`details/${mushroom.id}`} className="custom-nav-link">
           <MushroomCard
+            id={mushroom.id}
             key={mushroom.apiId}
             image={mushroom.photo}
             latinName={mushroom.latinName}
