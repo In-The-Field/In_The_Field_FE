@@ -8,6 +8,7 @@ import Nav from '../Nav/Nav'
 import { Link } from 'react-router-dom';
 import { mockMushroomCards } from '../../mockData.js';
 import MushroomCard from "../MushroomCard/MushroomCard";
+import DetailsPage from '../DetailsPage/DetailsPage';
 
 function App() {
   const [showError, setShowError] = useState(false);
@@ -18,7 +19,7 @@ function App() {
     return mockMushroomCards.map(mushroom => (
       <Link to={`details/${mushroom.id}`} key={mushroom.id}> 
         <MushroomCard
-            image={mushroom.image}
+            photo={mushroom.photo}
             latinName={mushroom.latinName}
             commonNames={mushroom.commonNames}
             probability={mushroom.probability}
@@ -40,8 +41,10 @@ function App() {
         <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
         <Route path="/error" element={<ErrorPage error={error} />} /> 
         <Route path="/myfieldguide" element={<FieldGuide error={error} renderMushroomCards={renderMushroomCards} />} />
+        <Route path="/details/:id" element={<DetailsPage 
+        // latinName={mushroom.latinName} commonNames={mushroom.commonNames} edibility={mushroom.edibility} taxonomy={mushroom.taxonomy} photo={mushroom.photo} characteristic={mushroom.characteristic}
+        />} />
       </Routes>
-
     </>
   );
 }
