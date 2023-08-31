@@ -33,3 +33,7 @@ const GET_MUSHROOM_MATCHES = gql`
     }
   }
 `;
+
+export default GET_MUSHROOM_MATCHES
+
+
