@@ -10,11 +10,12 @@ padding: 2rem 20px 20px 20px;
 text-align: center;
 
 }
-
-.pic {
-  width: 40%;
+.save-detail {
+  margin-top: 1rem
 }
-
+.details-image {
+  border: 5px solid #ffdab9;
+}
 .image-latin-common-container { 
   display: flex;
   justify-content: space-between;

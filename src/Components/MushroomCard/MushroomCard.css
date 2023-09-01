@@ -50,4 +50,6 @@
     color: #624612;
   }
 
-  
+  .tax-charact-cont {
+    display: flex;
+  }
