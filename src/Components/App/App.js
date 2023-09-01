@@ -32,19 +32,16 @@ function App() {
     }
   }, [queryError])
 
- const renderMushroomCards = () => {
-
-  if (loading) return <p>Loading...</p>; 
-  if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
-
-  console.log('data', data)
-
+  const renderMushroomCards = () => {
+    if (loading) return <p>Loading...</p>;
+    if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
+  
     return data.mushrooms.map((mushroom) => (
-      <div className="mushroom-card-wrapper">
+      <div className="mushroom-card-wrapper" key={mushroom.id}>
         <NavLink to={`details/${mushroom.id}`} className="custom-nav-link" state={mushroom}>
           <MushroomCard
             id={mushroom.id}
-            key={mushroom.apiId}
+            key={mushroom.apiId} // This line is not necessary and can be removed
             image={mushroom.photo}
             latinName={mushroom.latinName}
             commonNames={mushroom.commonName}
@@ -55,6 +52,7 @@ function App() {
       </div>
     ));
   };
+  
 
    const handleError = (errorInfo) => {
     setError(errorInfo); 
