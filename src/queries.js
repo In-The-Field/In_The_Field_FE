@@ -11,14 +11,14 @@ const GET_MUSHROOM_MATCHES = gql`
       edibility
       photo
       photoCitation
-      taxonomy {
+      taxonomyp {
         genus
         order
         family
         phylum
         kingdom
       }
-      characteristic {
+      characteristicp {
         hymeniumType
         stipeCharacter
         sporePrintColor
@@ -26,7 +26,7 @@ const GET_MUSHROOM_MATCHES = gql`
         hymeniumAttachment
         mushroomEcologicalType
       }
-      lookAlike {
+      lookAlikep {
         name
       }
       description

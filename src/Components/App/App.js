@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Route, Routes } from 'react-router-dom'; 
 import HomePage from '../HomePage/HomePage'; 
 import ErrorPage from '../ErrorPage/ErrorPage';
@@ -10,7 +10,6 @@ import { mockMushroomCards } from '../../mockData.js';
 import MushroomCard from "../MushroomCard/MushroomCard";
 import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
-
 import { useQuery } from '@apollo/client';
 import GET_MUSHROOM_MATCHES from '../../queries.js'
 
@@ -19,17 +18,18 @@ function App() {
   const [showError, setShowError] = useState(false);
   const [error, setError] = useState(null);
   const [userImage, setUserImage] = useState(null);
-
   const { loading, error: queryError, data } = useQuery(GET_MUSHROOM_MATCHES, {
     variables: { image: userImage },
     skip: !userImage,
   });
   
-  if (queryError) {
-    console.error("There was an error fetching data:", queryError);
-    setError(queryError.message);
-    setShowError(true);
-  }
+  useEffect(() => {
+    if (queryError) {
+      console.error("There was an error fetching data:", queryError);
+      setError(queryError.message);
+      setShowError(true);
+    }
+  }, [queryError])
 
  const renderMushroomCards = () => {
 
