@@ -47,7 +47,6 @@ function App() {
           <MushroomCard
             id={mushroom.id}
             key={mushroom.apiId}
-            id={mushroom.apiId}
             image={mushroom.photo}
             latinName={mushroom.latinName}
             commonNames={mushroom.commonName}
