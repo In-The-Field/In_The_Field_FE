@@ -2,6 +2,7 @@ import React from "react";
 import "./DetailsPage.css";
 import { useLocation } from "react-router-dom";
 import ToggleSave from "../ToggleSave/ToggleSave";
+import { handleNoLookAlikes } from "../../utils";
 
 const DetailsPage = () => {
   const location = useLocation();
