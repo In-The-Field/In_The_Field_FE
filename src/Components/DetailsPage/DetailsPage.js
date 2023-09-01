@@ -31,18 +31,18 @@ const DetailsPage = () => {
             <div className="tax-charact-cont">
               <div className="taxonomy">
                 <h3>Taxonomy:</h3>
-                <p>Genus: {taxonomy.genus},</p>
-                <p>Order: {taxonomy.order},</p>
-                <p>Family: {taxonomy.family},</p>
-                <p>Phylum: {taxonomy.phylum},</p>
+                <p>Genus: {taxonomy.genus}</p>
+                <p>Order: {taxonomy.order}</p>
+                <p>Family: {taxonomy.family}</p>
+                <p>Phylum: {taxonomy.phylum}</p>
                 <p> Kingdom: {taxonomy.kingdom}</p>
             </div>
             <div className="taxonomy">
               <h3>Characterisics:</h3>
-              <p> {characteristics.hymeniumType},</p>
-              <p> Stipe Character: {characteristics.stipeCharacter},</p>
-              <p> Spore Print Color {characteristics.sporePrintColor},</p>
-              <p> Mushroom Cap Shape: {characteristics.mushroomCapShape},</p>
+              <p> Hymenium Type: {characteristics.hymeniumType}</p>
+              <p> Stipe Character: {characteristics.stipeCharacter}</p>
+              <p> Spore Print Color {characteristics.sporePrintColor}</p>
+              <p> Mushroom Cap Shape: {characteristics.mushroomCapShape}</p>
               <p> Hymenium Attachment: {characteristics.hymeniumAttachment}</p>
               <p> Mushroom Ecological Type:{characteristics.mushroomEcologicalType}</p>
               </div>
