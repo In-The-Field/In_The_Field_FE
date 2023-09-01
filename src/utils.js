@@ -10,6 +10,11 @@ const handleNoLookAlikes = lookAlikes => {
   : "not provided";
 }
 
+const handleNullCharacteristics = (characteristic) => {
+  return characteristic || "not provided";
+};
 
 
-export { formatProbability, handleNoLookAlikes }
+
+
+export { formatProbability, handleNoLookAlikes, handleNullCharacteristics }
