@@ -5,14 +5,19 @@ import ToggleSave from "../ToggleSave/ToggleSave";
 import { handleNoLookAlikes } from "../../utils";
 
 const DetailsPage = () => {
+
   const location = useLocation();
-  console.log(location)
+  console.log('location', location)
   const mushroom = location.state;
-  console.log(mushroom);
+  console.log('mushroom', mushroom);
+  console.log('mushroom.psychoactive', mushroom.psychoactive)
   const taxonomy = mushroom.taxonomies[0];
   //function to handle null fo redibility
   const characteristics = mushroom.characteristics[0];
   console.log(characteristics.hymeniumType);
+
+  const lookAlikesValue = handleNoLookAlikes(mushroom.lookAlikes);
+
 
   return (
     <div className="details-container">
@@ -42,10 +47,10 @@ const DetailsPage = () => {
               <h3>Characterisics:</h3>
               <p> Hymenium Type: {characteristics.hymeniumType}</p>
               <p> Stipe Character: {characteristics.stipeCharacter}</p>
-              <p> Spore Print Color {characteristics.sporePrintColor}</p>
+              <p> Spore Print Color: {characteristics.sporePrintColor}</p>
               <p> Mushroom Cap Shape: {characteristics.mushroomCapShape}</p>
               <p> Hymenium Attachment: {characteristics.hymeniumAttachment}</p>
-              <p> Mushroom Ecological Type:{characteristics.mushroomEcologicalType}</p>
+              <p> Mushroom Ecological Type: {characteristics.mushroomEcologicalType}</p>
               </div>
             </div>
           </div>
@@ -53,13 +58,11 @@ const DetailsPage = () => {
       </div>
       <div className="info">
         <p>
-          <strong>Edibility: </strong> {mushroom.edibility}
+          <strong>Edibility: </strong> {mushroom.edibility || "not provided"}
         </p>
-        <p><strong>Lookalike: </strong></p>
+        <p><strong>Lookalike: </strong> {lookAlikesValue}</p>
         <p>
-          <strong>Psychoactive: </strong>
-          {mushroom.psychoactive}
-        </p>
+          <strong>Psychoactive: </strong> {mushroom.psychoactive === null ? "not provided" : mushroom.psychoactive ? "true" : "false"} </p>
       </div>
       <div className="description">
         <p>

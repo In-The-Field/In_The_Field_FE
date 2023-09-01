@@ -12,6 +12,4 @@ const handleNoLookAlikes = lookAlikes => {
 
 
 
-
-
 export { formatProbability, handleNoLookAlikes }
