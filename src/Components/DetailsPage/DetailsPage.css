@@ -11,10 +11,14 @@ text-align: center;
 
 }
 
-.pic {
+/* .pic {
+  height: 20px;
   width: 40%;
-}
-
+} */
+/* .details-image {
+  height: 1000px;
+  width: 345px;
+} */
 .image-latin-common-container { 
   display: flex;
   justify-content: space-between;
