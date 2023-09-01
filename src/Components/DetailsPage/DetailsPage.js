@@ -9,7 +9,6 @@ const DetailsPage = () => {
   const mushroom = location.state;
   console.log(mushroom);
   const taxonomy = mushroom.taxonomies[0];
-  //function to handle null fo redibility
   const characteristics = mushroom.characteristics[0];
   console.log(characteristics.hymeniumType);
 
@@ -44,7 +43,7 @@ const DetailsPage = () => {
             </div>
           </div>
           <div className="characteristics">
-            <h3>Characterisics:</h3>
+            <h3>Characteristics:</h3>
             <p> Hymenium Type: {characteristics.hymeniumType}</p>
             <p> Stipe Character: {characteristics.stipeCharacter}</p>
             <p> Spore Print Color {characteristics.sporePrintColor}</p>

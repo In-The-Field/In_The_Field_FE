@@ -3,13 +3,14 @@
   margin-top: 2px;
   margin-bottom: 2px;
 }
+
 .details-container {
 display: flex;
 flex-direction: column;
 color: white;
 padding: 2rem 20px 20px 20px;
 text-align: center;
-
+height: 90vh
 }
 .save-detail {
   margin-top: 1rem
@@ -24,35 +25,43 @@ text-align: center;
 }
 .latin-common-edibility-taxonomy {
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 1fr; 
   gap: 20px; 
 }
 
 .details-image {
-  max-width: 100%; /* Allow the image to be responsive */
+  max-width: 100%;
+  width: 90%; 
   height: auto;
+  border-radius: 10px;
 }
-.info p {
-  margin: 10px 0; 
+.info {
+  width: 15rem;
+  padding: 1%;
 }
 .name-holder {
   background-color: rgba(242, 201, 185, 0.8);
+  width: 90%;
+  border-radius: 10px;
 }
-.taxonomy {
+.taxonomy, .info {
   background-color: rgba(242, 201, 185, 0.8);
   color: #624612;
   box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   line-height: 1;
   font-size: small;
-  padding: 2% 2% 1% 2%;
+  padding: 1%;
   margin-bottom: 1rem;
+  width: 15rem;
 }
 .grid-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 85vh;
 }
 .characteristics {
   background-color: rgba(242, 201, 185, 0.8);
@@ -60,19 +69,9 @@ text-align: center;
   box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   line-height: 1;
-  font-size: small;
-  padding: 2% 2% 1% 2%;
   margin-bottom: 1rem;
-}
-
-
-.info {
-  background-color: rgba(242, 201, 185, 0.8);
-  color:#624612 ;
-  box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  line-height: 1;
-  margin: 1rem;
+  width: 23rem;
+  height: 20rem;
 }
 
 .name-taxonomy-cont {
@@ -84,7 +83,6 @@ text-align: center;
   box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   line-height: 1;
-  
 }
 
 .description {
@@ -97,7 +95,4 @@ text-align: center;
   text-overflow: ellipsis; 
   white-space: normal;
   height: 7rem;
-}
-.pic {
-  width: 50%;
 }
