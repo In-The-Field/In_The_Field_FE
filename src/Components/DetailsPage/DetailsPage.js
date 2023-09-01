@@ -1,6 +1,7 @@
 import React from "react";
 import "./DetailsPage.css";
 import { useLocation } from "react-router-dom";
+import ToggleSave from "../ToggleSave/ToggleSave";
 
 const DetailsPage = () => {
   const location = useLocation();
@@ -16,6 +17,9 @@ const DetailsPage = () => {
       <div className="image-latin-common-container">
         <div className="pic">
           <img className="details-image" src={mushroom.photo} alt="mushroom" />
+          <div className="save-detail">
+          <ToggleSave  />
+          </div>
         </div>
         <div className="latin-common-edibility-taxonomy">
           <div className="name-taxonomy-cont">
