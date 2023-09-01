@@ -12,14 +12,7 @@ const GET_MUSHROOM_MATCHES = gql`
       edibility
       photo
       photoCitation
-      
-      taxonomyp {
-        genus
-        order
-        family
-        phylum
-        kingdom
-      }
+
       characteristics {
         hymeniumType
         stipeCharacter
@@ -31,7 +24,6 @@ const GET_MUSHROOM_MATCHES = gql`
       lookAlikes {
         name
       }
-
       taxonomies {
         genus
         order

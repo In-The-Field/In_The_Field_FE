@@ -6,7 +6,6 @@ const FieldGuide = ({ renderMushroomCards }) => {
   return (
     <div className="field-guide-container">
       <div className="field-guide-content">
-        {renderMushroomCards()}
       </div>
     </div>
   );
