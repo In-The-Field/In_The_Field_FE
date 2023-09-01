@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+
 const GET_MUSHROOM_MATCHES = gql`
   query GetMushroomMatches($image: String!) {
     mushrooms(image: $image) {

@@ -41,7 +41,7 @@ function App() {
         <NavLink to={`details/${mushroom.id}`} className="custom-nav-link" state={mushroom}>
           <MushroomCard
             id={mushroom.id}
-            key={mushroom.apiId} // This line is not necessary and can be removed
+            key={mushroom.apiId} 
             image={mushroom.photo}
             latinName={mushroom.latinName}
             commonNames={mushroom.commonName}

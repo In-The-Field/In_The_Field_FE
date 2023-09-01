@@ -4,7 +4,7 @@ import toggleOffImage from "../images/color toggle (1).png";
 import "../ToggleSave/ToggleSave.css";
 
 const ToggleSave = () => {
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState(true); // Start with the toggle off
 
   const handleToggle = () => {
     setIsToggled(!isToggled);
