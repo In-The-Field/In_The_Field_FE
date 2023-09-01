@@ -1,10 +1,16 @@
 import React from "react";
 import "./DetailsPage.css";
+import { useLocation} from "react-router-dom";
 
-const DetailsPage = ({ latinName, commonName, edibility, taxonomy, photo, characteristic, description, lookalike, psychoactive }) => {
+
+const DetailsPage = ( ) => {
+ const location = useLocation()
+ const mushroom = location.state
+ console.log(mushroom)
   return (
     <div className="details-container">
-      <div className="image-latin-common-container">
+      <p>{mushroom.commonName}</p>
+      {/* <div className="image-latin-common-container">
         <div className="pic">
           <img className="details-image" src={photo} alt="mushroom" />
         </div>
@@ -41,7 +47,7 @@ const DetailsPage = ({ latinName, commonName, edibility, taxonomy, photo, charac
       </div>
       <div className="description">
         <p><strong>Description:</strong>{description}</p>
-      </div>
+      </div> */}
     </div>
   );
 };

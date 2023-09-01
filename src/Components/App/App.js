@@ -13,7 +13,7 @@ import ToggleSave from '../ToggleSave/ToggleSave';
 
 import { useQuery } from '@apollo/client';
 import GET_MUSHROOM_MATCHES from '../../queries.js'
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 
 
 function App() {
@@ -43,9 +43,10 @@ function App() {
 
     return data.mushrooms.map((mushroom) => (
       <div className="mushroom-card-wrapper">
-        <NavLink to={`details/${mushroom.id}`} className="custom-nav-link">
+        <NavLink to={`details/${mushroom.id}`} className="custom-nav-link" state={mushroom}>
           <MushroomCard
             key={mushroom.apiId}
+            id={mushroom.apiId}
             image={mushroom.photo}
             latinName={mushroom.latinName}
             commonNames={mushroom.commonName}
@@ -70,10 +71,7 @@ function App() {
         <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
         <Route path="/error" element={<ErrorPage error={error} />} /> 
         <Route path="/myfieldguide" element={<FieldGuide error={error} renderMushroomCards={renderMushroomCards} />} />
-        <Route path="/details/:id" element={<DetailsPage 
-        // latinName={mushroom.latinName} commonNames={mushroom.commonNames} edibility={mushroom.edibility} taxonomy={mushroom.taxonomy} photo={mushroom.photo} characteristic={mushroom.characteristic}
-        />} />
-
+        <Route path="/details/:id" element={<DetailsPage />} />
       </Routes>
     </>
   );
