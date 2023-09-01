@@ -7,18 +7,22 @@ const DetailsPage = ( ) => {
  const location = useLocation()
  const mushroom = location.state
  console.log(mushroom)
+ const taxonomy = mushroom.taxonomies[0]
+
+ const characteristics = mushroom.characteristics[0]
+ console.log(characteristics)
+ 
   return (
     <div className="details-container">
-      <p>{mushroom.commonName}</p>
-      {/* <div className="image-latin-common-container">
+      <div className="image-latin-common-container">
         <div className="pic">
-          <img className="details-image" src={photo} alt="mushroom" />
+          <img className="details-image" src={mushroom.photo} alt="mushroom" />
         </div>
         <div className="latin-common-edibility-taxonomy">
           <div className="name-taxonomy-cont">
             <div className="name-holder">
-              <h2>{latinName}</h2>
-              <p>{commonName}</p>
+              <h2>{mushroom.latinName}</h2>
+              <p>{mushroom.commonName}</p>
             </div>
             <div className="taxonomy">
               <h3>Taxonomy:</h3>
@@ -30,24 +34,24 @@ const DetailsPage = ( ) => {
             </div>
             <div className="taxonomy">
               <h3>Characterisics:</h3>
-              <p> Hymenium Type: {characteristic.hymeniumType},</p>
-              <p> Stipe Character: {characteristic.stipeCharacter},</p>
-              <p> Spore Print Color {characteristic.sporePrintColor},</p>
-              <p> Mushroom Cap Shape: {characteristic.mushroomCapShape},</p>
-              <p> Hymenium Attachment: {characteristic.hymeniumAttachment}</p>
-              <p> Mushroom Ecological Type: {characteristic.mushroomEcologicalType}</p>
+              <p> Hymenium Type: {characteristics.hymeniumType},</p>
+              <p> Stipe Character: {characteristics.stipeCharacter},</p>
+              <p> Spore Print Color {characteristics.sporePrintColor},</p>
+              <p> Mushroom Cap Shape: {characteristics.mushroomCapShape},</p>
+              <p> Hymenium Attachment: {characteristics.hymeniumAttachment}</p>
+              <p> Mushroom Ecological Type: {characteristics.mushroomEcologicalType}</p>
             </div>
           </div>
           <div className="info">
-            <p><strong>Edibility: </strong> {edibility}</p>
-            <p><strong>Lookalike: </strong>{lookalike}</p>
-            <p><strong>Psychoactive: </strong>{psychoactive}</p>
+            <p><strong>Edibility: </strong> {mushroom.edibility}</p>
+            {/* <p><strong>Lookalike: </strong>{mushroom.Alikes}</p> */}
+            <p><strong>Psychoactive: </strong>{mushroom.psychoactive}</p>
           </div>
         </div>
       </div>
       <div className="description">
-        <p><strong>Description:</strong>{description}</p>
-      </div> */}
+        <p><strong>Description:</strong>{mushroom.description}</p>
+      </div> 
     </div>
   );
 };
