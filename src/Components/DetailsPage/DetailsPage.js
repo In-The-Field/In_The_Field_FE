@@ -49,7 +49,7 @@ const DetailsPage = () => {
             <p> Spore Print Color {characteristics.sporePrintColor}</p>
             <p> Mushroom Cap Shape: {characteristics.mushroomCapShape}</p>
             <p> Hymenium Attachment: {characteristics.hymeniumAttachment}</p>
-            <p>Mushroom Ecological Type:{characteristics.mushroomEcologicalType} </p>
+            <p>Mushroom Ecological Type: {characteristics.mushroomEcologicalType} </p>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ const DetailsPage = () => {
 
       <div className="description">
         <p>
-          <strong>Description:</strong>
+          <strong>Description: </strong>
           {mushroom.description}
         </p>
       </div>
