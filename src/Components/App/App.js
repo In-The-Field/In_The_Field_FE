@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Route, Routes } from 'react-router-dom'; 
 import HomePage from '../HomePage/HomePage'; 
 import ErrorPage from '../ErrorPage/ErrorPage';
@@ -17,7 +17,6 @@ function App() {
   const [showError, setShowError] = useState(false);
   const [error, setError] = useState(null);
   const [userImage, setUserImage] = useState(null);
-
   const { loading, error: queryError, data } = useQuery(GET_MUSHROOM_MATCHES, {
     variables: { image: userImage },
     skip: !userImage,
@@ -31,19 +30,16 @@ function App() {
     }
   }, [queryError])
 
- const renderMushroomCards = () => {
-
-  if (loading) return <p>Loading...</p>; 
-  if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
-
-  console.log('data', data)
-
+  const renderMushroomCards = () => {
+    if (loading) return <p>Loading...</p>;
+    if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
+  
     return data.mushrooms.map((mushroom) => (
-      <div className="mushroom-card-wrapper">
+      <div className="mushroom-card-wrapper" key={mushroom.id}>
         <NavLink to={`details/${mushroom.id}`} className="custom-nav-link" state={mushroom}>
           <MushroomCard
             id={mushroom.id}
-            key={mushroom.apiId}
+            key={mushroom.id}
             image={mushroom.photo}
             latinName={mushroom.latinName}
             commonNames={mushroom.commonName}
@@ -54,6 +50,7 @@ function App() {
       </div>
     ));
   };
+  
 
    const handleError = (errorInfo) => {
     setError(errorInfo); 

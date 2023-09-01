@@ -83,13 +83,13 @@
 
   .homepage-right-container {
     background-color: rgba(242, 201, 185, 0.8);
-    padding: 60px;
+    padding: 30px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
     color: #624612;
-    overflow-y: scroll; 
-    max-height: calc(100vh - 200px); 
+    overflow-y: scroll;
+    max-height: calc(100vh - 200px);
     border: 5px solid #ffdab9;
   }
 
