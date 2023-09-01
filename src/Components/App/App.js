@@ -6,14 +6,11 @@ import FieldGuide from '../FieldGuide/FieldGuide';
 import './App.css';
 import Nav from '../Nav/Nav'
 import { NavLink } from 'react-router-dom';
-import { mockMushroomCards } from '../../mockData.js';
 import MushroomCard from "../MushroomCard/MushroomCard";
 import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
-
 import { useQuery } from '@apollo/client';
 import GET_MUSHROOM_MATCHES from '../../queries.js'
-// import { useEffect } from 'react';
 
 
 function App() {
@@ -47,7 +44,6 @@ function App() {
           <MushroomCard
             id={mushroom.id}
             key={mushroom.apiId}
-            id={mushroom.apiId}
             image={mushroom.photo}
             latinName={mushroom.latinName}
             commonNames={mushroom.commonName}
