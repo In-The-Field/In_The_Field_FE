@@ -5,6 +5,7 @@ import ToggleSave from "../ToggleSave/ToggleSave";
 
 const DetailsPage = () => {
   const location = useLocation();
+  console.log(location)
   const mushroom = location.state;
   console.log(mushroom);
   const taxonomy = mushroom.taxonomies[0];
