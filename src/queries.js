@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+
 const GET_MUSHROOM_MATCHES = gql`
   query GetMushroomMatches($image: String!) {
     mushrooms(image: $image) {
@@ -12,6 +13,7 @@ const GET_MUSHROOM_MATCHES = gql`
       edibility
       photo
       photoCitation
+
       characteristics {
         hymeniumType
         stipeCharacter
@@ -23,7 +25,6 @@ const GET_MUSHROOM_MATCHES = gql`
       lookAlikes {
         name
       }
-
       taxonomies {
         genus
         order
