@@ -2,7 +2,8 @@ import { gql } from "@apollo/client";
 
 const GET_MUSHROOM_MATCHES = gql`
   query GetMushroomMatches($image: String!) {
-    matches(image: $image) {
+    mushrooms(image: $image) {
+      id
       probability
       psychoactive
       apiId
@@ -11,6 +12,7 @@ const GET_MUSHROOM_MATCHES = gql`
       edibility
       photo
       photoCitation
+      
       taxonomyp {
         genus
         order
@@ -18,7 +20,7 @@ const GET_MUSHROOM_MATCHES = gql`
         phylum
         kingdom
       }
-      characteristicp {
+      characteristics {
         hymeniumType
         stipeCharacter
         sporePrintColor
@@ -26,9 +28,18 @@ const GET_MUSHROOM_MATCHES = gql`
         hymeniumAttachment
         mushroomEcologicalType
       }
-      lookAlikep {
+      lookAlikes {
         name
       }
+
+      taxonomies {
+        genus
+        order
+        family
+        phylum
+        kingdom
+      }
+      
       description
     }
   }

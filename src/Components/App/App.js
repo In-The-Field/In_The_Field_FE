@@ -12,6 +12,7 @@ import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { useQuery } from '@apollo/client';
 import GET_MUSHROOM_MATCHES from '../../queries.js'
+// import { useEffect } from 'react';
 
 
 function App() {
@@ -34,14 +35,15 @@ function App() {
  const renderMushroomCards = () => {
 
   if (loading) return <p>Loading...</p>; 
-  if (!data || !data.matches) return <p>No mushrooms found.</p>;
+  if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
 
   console.log('data', data)
 
-    return data.matches.map((mushroom) => (
+    return data.mushrooms.map((mushroom) => (
       <div className="mushroom-card-wrapper">
         <NavLink to={`details/${mushroom.id}`} className="custom-nav-link">
           <MushroomCard
+            id={mushroom.id}
             key={mushroom.apiId}
             image={mushroom.photo}
             latinName={mushroom.latinName}
