@@ -8,7 +8,7 @@ import { TOGGLE_SAVE_MUSHROOM } from "../../queries";
 const ToggleSave = ({ mushroomId, isSavedInitially, onToggle }) => {
   const [isToggled, setIsToggled] = useState(isSavedInitially);
   const [toggleSaveMushroom] = useMutation(TOGGLE_SAVE_MUSHROOM);
-  const userId = 1;
+  const userId = 3;
 
   const handleToggle = async () => {
     try {
