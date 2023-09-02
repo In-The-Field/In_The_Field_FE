@@ -19,7 +19,7 @@
 .details-image {
   border: 5px solid #ffdab9;
   width: 90%;
-  height: 60%;
+  height: 50%;
   border-radius: 10px;
 }
 .image-latin-common-container {
@@ -27,19 +27,13 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   color: #624612;
+  height: 107%;
 }
 .latin-common-edibility-taxonomy {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-}
-
-.details-image {
-  max-width: 100%;
-  width: 90%;
-  height: 65%;
-  border-radius: 10px;
 }
 .info {
   width: 15rem;
@@ -50,6 +44,7 @@
   width: 90%;
   height: 15%;
   border-radius: 10px;
+  border: 5px solid #ffdab9;
 }
 .taxonomy,
 .info {
@@ -57,11 +52,11 @@
   color: #624612;
   box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  line-height: 1;
   font-size: small;
-  padding: 1%;
-  margin-bottom: 1rem;
+  margin-bottom: 7rem;
   width: 15rem;
+  margin-top: -98px;
+  border: 5px solid #ffdab9;
 }
 .grid-container {
   display: flex;
@@ -79,6 +74,7 @@
   margin-bottom: 1rem;
   width: 23rem;
   height: 20rem;
+  border: 5px solid #ffdab9;
 }
 
 .name-taxonomy-cont {
@@ -102,4 +98,5 @@
   text-overflow: ellipsis;
   white-space: normal;
   height: 50rem; 
+  border: 5px solid #ffdab9;
 }
