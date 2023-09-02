@@ -10,7 +10,7 @@ import MushroomCard from "../MushroomCard/MushroomCard";
 import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { useQuery } from '@apollo/client';
-import GET_MUSHROOM_MATCHES from '../../queries.js'
+import {GET_MUSHROOM_MATCHES} from '../../queries';
 
 
 function App() {
@@ -46,10 +46,11 @@ function App() {
             probability={mushroom.probability}
           />
         </NavLink>
-        <ToggleSave />
+        <ToggleSave mushroomId={mushroom.id} isSavedInitially={false} /> 
       </div>
     ));
   };
+  
   
 
    const handleError = (errorInfo) => {
