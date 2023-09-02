@@ -1,7 +1,32 @@
 import { gql } from "@apollo/client";
 
+export const TOGGLE_SAVE_MUSHROOM = gql`
+mutation saveUserMushrooms($userId: ID!, $mushroomId: ID!) {
+  saveUserMushrooms(input:{userId: $userId, mushroomId: $mushroomId}) {
+    userMushroom {
+      id
+      isSaved
+    }
+    user {
+      id
+      name
+      email
+    }
+    mushroom {
+      id
+      commonName
+      latinName
+      apiId
+    }
+  }
+}
 
-const GET_MUSHROOM_MATCHES = gql`
+`;
+
+
+
+// Query
+export const GET_MUSHROOM_MATCHES = gql`
   query GetMushroomMatches($image: String!) {
     mushrooms(image: $image) {
       id
@@ -37,7 +62,3 @@ const GET_MUSHROOM_MATCHES = gql`
     }
   }
 `;
-
-export default GET_MUSHROOM_MATCHES
-
-

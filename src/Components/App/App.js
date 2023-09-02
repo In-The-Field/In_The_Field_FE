@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Route, Routes } from 'react-router-dom'; 
+import { Route, Routes } from 'react-router-dom'; 
 import HomePage from '../HomePage/HomePage'; 
 import ErrorPage from '../ErrorPage/ErrorPage';
 import FieldGuide from '../FieldGuide/FieldGuide';
@@ -10,8 +10,8 @@ import MushroomCard from "../MushroomCard/MushroomCard";
 import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { useQuery } from '@apollo/client';
-import GET_MUSHROOM_MATCHES from '../../queries.js'
-
+import { GET_MUSHROOM_MATCHES } from '../../queries';
+import { ToggleSaveProvider } from '../../ToggleSaveContext'; 
 
 function App() {
   const [showError, setShowError] = useState(false);
@@ -21,7 +21,9 @@ function App() {
     variables: { image: userImage },
     skip: !userImage,
   });
-  
+
+  const [mushroomStates, setMushroomStates] = useState({}); // State to track mushroom card states
+
   useEffect(() => {
     if (queryError) {
       console.error("There was an error fetching data:", queryError);
@@ -30,7 +32,14 @@ function App() {
     }
   }, [queryError])
 
-  const renderMushroomCards = () => {
+  const handleToggleMushroom = (mushroomId, isToggled) => {
+    setMushroomStates(prevState => ({
+      ...prevState,
+      [mushroomId]: isToggled,
+    }));
+  };
+
+  const renderMushroomCards = (isToggled, toggle) => {
     if (loading) return <p>Loading...</p>;
     if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
   
@@ -46,28 +55,36 @@ function App() {
             probability={mushroom.probability}
           />
         </NavLink>
-        <ToggleSave />
+        <ToggleSave
+          mushroomId={mushroom.id}
+          isSavedInitially={mushroomStates[mushroom.id] || false}
+          onToggle={handleToggleMushroom}
+          isToggled={isToggled} 
+          toggle={toggle} 
+        />
       </div>
     ));
   };
   
 
-   const handleError = (errorInfo) => {
+  const handleError = (errorInfo) => {
     setError(errorInfo); 
     setShowError(true);
   };
 
   return (
-    <>
-      <Nav />
-      {showError && <ErrorPage error={error} />} 
-      <Routes>
-        <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
-        <Route path="/error" element={<ErrorPage error={error} />} /> 
-        <Route path="/myfieldguide" element={<FieldGuide error={error} renderMushroomCards={renderMushroomCards} />} />
-        <Route path="/details/:id" element={<DetailsPage />} />
-      </Routes>
-    </>
+    <ToggleSaveProvider> 
+      <div>
+        <Nav />
+        {showError && <ErrorPage error={error} />} 
+        <Routes>
+          <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
+          <Route path="/error" element={<ErrorPage error={error} />} /> 
+          <Route path="/myfieldguide" element={<FieldGuide error={error} renderMushroomCards={renderMushroomCards} />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
+        </Routes>
+      </div>
+    </ToggleSaveProvider>
   );
 }
 
