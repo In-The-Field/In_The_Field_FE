@@ -70,6 +70,8 @@ export const GET_SAVED_USERMUSHROOMS = gql`
           commonName
           latinName
           apiId
+          photo
+
         }
       }
     }
