@@ -3,22 +3,24 @@ import toggleOffImage from "../images/image_png.png";
 import toggleOnImage from "../images/color toggle (1).png";
 import "../ToggleSave/ToggleSave.css";
 import { useMutation } from "@apollo/client";
-import {TOGGLE_SAVE_MUSHROOM} from "../../queries"
+import { TOGGLE_SAVE_MUSHROOM } from "../../queries";
 
-const ToggleSave = ({ mushroomId, isSavedInitially }) => {
+const ToggleSave = ({ mushroomId, isSavedInitially, onToggle }) => {
   const [isToggled, setIsToggled] = useState(isSavedInitially);
   const [toggleSaveMushroom] = useMutation(TOGGLE_SAVE_MUSHROOM);
-  const userId = 1
+  const userId = 1;
+
   const handleToggle = async () => {
     try {
-      console.log("userId:", userId)
-      console.log("mushroomId:", mushroomId)
+      console.log("User ID:", userId); 
+      console.log("Mushroom ID:", mushroomId);
       
       await toggleSaveMushroom({
-        variables: { userId,mushroomId},
+        variables: { userId, mushroomId },
       });
 
       setIsToggled(!isToggled);
+      onToggle(mushroomId, !isToggled); 
     } catch (error) {
       console.error("Error toggling save:", error);
     }
