@@ -62,6 +62,7 @@ export const GET_MUSHROOM_MATCHES = gql`
     }
   }
 `;
+
 export const GET_SAVED_USERMUSHROOMS = gql`
   query GET_SAVED_USERMUSHROOMS($id: ID!){
       user(id: $id) {

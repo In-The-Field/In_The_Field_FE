@@ -9,8 +9,8 @@ import { useLocation } from 'react-router-dom'
 const MushroomCard = ({ image, latinName, commonNames, probability }) => {
   const [isFav, setIsFav] = useState(false);
   let location = useLocation()
-  console.log(location.pathname)
   const displayProbability = formatProbability(probability);
+  
   if(location.pathname === '/myfieldguide'){
   return (
     <div className="mushroom-card">
