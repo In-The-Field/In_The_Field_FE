@@ -11,6 +11,7 @@ import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { useQuery } from '@apollo/client';
 import { GET_MUSHROOM_MATCHES } from '../../queries';
+import { ToggleSaveProvider } from '../../ToggleSaveContext'; 
 
 function App() {
   const [showError, setShowError] = useState(false);
@@ -38,10 +39,10 @@ function App() {
     }));
   };
 
-  const renderMushroomCards = () => {
+  const renderMushroomCards = (isToggled, toggle) => {
     if (loading) return <p>Loading...</p>;
     if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
-
+  
     return data.mushrooms.map((mushroom) => (
       <div className="mushroom-card-wrapper" key={mushroom.id}>
         <NavLink to={`details/${mushroom.id}`} className="custom-nav-link" state={mushroom}>
@@ -56,12 +57,15 @@ function App() {
         </NavLink>
         <ToggleSave
           mushroomId={mushroom.id}
-          isSavedInitially={mushroomStates[mushroom.id] || false} // Pass the saved state
-          onToggle={handleToggleMushroom} // Pass the callback function
+          isSavedInitially={mushroomStates[mushroom.id] || false}
+          onToggle={handleToggleMushroom}
+          isToggled={isToggled} 
+          toggle={toggle} 
         />
       </div>
     ));
   };
+  
 
   const handleError = (errorInfo) => {
     setError(errorInfo); 
@@ -69,16 +73,18 @@ function App() {
   };
 
   return (
-    <>
-      <Nav />
-      {showError && <ErrorPage error={error} />} 
-      <Routes>
-        <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
-        <Route path="/error" element={<ErrorPage error={error} />} /> 
-        <Route path="/myfieldguide" element={<FieldGuide error={error} renderMushroomCards={renderMushroomCards} />} />
-        <Route path="/details/:id" element={<DetailsPage />} />
-      </Routes>
-    </>
+    <ToggleSaveProvider> 
+      <div>
+        <Nav />
+        {showError && <ErrorPage error={error} />} 
+        <Routes>
+          <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
+          <Route path="/error" element={<ErrorPage error={error} />} /> 
+          <Route path="/myfieldguide" element={<FieldGuide error={error} renderMushroomCards={renderMushroomCards} />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
+        </Routes>
+      </div>
+    </ToggleSaveProvider>
   );
 }
 
