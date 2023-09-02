@@ -80,10 +80,9 @@ export const GET_SAVED_USERMUSHROOMS = gql`
 
 
 `
-export const GET_MUSHROOM_DETAILS = gql `{
-    query GET_MUSHROOM_DETAILS($id: ID!) {
-    mushroom(id: $id)
-    {
+export const GET_MUSHROOM_DETAILS = gql`
+  query GET_MUSHROOM_DETAILS($id: ID!) {
+    mushroom(id: $id) {
       id
       probability
       psychoactive
@@ -103,15 +102,15 @@ export const GET_MUSHROOM_DETAILS = gql `{
       }
       lookAlikes {
         name
-      }		
+      }
       taxonomies {
-            genus
-            order
-            family
-            phylum
-            kingdom
-          }
+        genus
+        order
+        family
+        phylum
+        kingdom
+      }
       description
     }
   }
-  `
+`;

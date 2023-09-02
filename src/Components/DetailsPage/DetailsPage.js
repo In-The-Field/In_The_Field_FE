@@ -12,7 +12,8 @@ const DetailsPage = () => {
   const characteristics = mushroom.characteristics[0];
   const lookAlikesValue = handleNoLookAlikes(mushroom.lookAlikes);
   const { isToggled, toggle } = useToggleSave();
-
+  console.log(location.pathname)
+  
   return (
     <div className="details-container">
       <div className="grid-container">
