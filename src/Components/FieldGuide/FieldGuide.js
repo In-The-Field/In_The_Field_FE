@@ -30,7 +30,7 @@ const FieldGuide = () => {
             // probability={mushroom.probability}
           />
         </NavLink>
-        <ToggleSave mushroomId={mushroom.id} isSavedInitially={false} /> 
+        <ToggleSave mushroomId={mushroom.id} isSavedInitially={true} /> 
       </div>
     ));
   };
