@@ -2,16 +2,17 @@ import React from "react";
 import "./MushroomCard.css";
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { formatProbability } from "../../utils";
-import { useState } from "react";
+import { useState, useQuery } from "react";
 import { useLocation } from 'react-router-dom'
 
+const MushroomCard = ({ id, image, latinName, commonNames, probability }) => {
 
-const MushroomCard = ({ image, latinName, commonNames, probability }) => {
   const [isFav, setIsFav] = useState(false);
+
   let location = useLocation()
   const displayProbability = formatProbability(probability);
-  
-  if(location.pathname === '/myfieldguide'){
+ 
+  if(location.pathname.includes('/myfieldguide')){
   return (
     <div className="mushroom-card">
       <div className="name-details">
