@@ -3,15 +3,13 @@ import "./DetailsPage.css";
 import { useLocation } from "react-router-dom";
 import ToggleSave from "../ToggleSave/ToggleSave";
 import { handleNoLookAlikes, handleNullCharacteristics } from "../../utils";
-import { useToggleSave } from '../../ToggleSaveContext';
 
-const DetailsPage = () => {
+const DetailsPage = ({ isSaved, setIsSaved }) => {
   const location = useLocation();
   const mushroom = location.state;
   const taxonomy = mushroom.taxonomies[0];
   const characteristics = mushroom.characteristics[0];
   const lookAlikesValue = handleNoLookAlikes(mushroom.lookAlikes);
-  const { isToggled, toggle } = useToggleSave();
 
   return (
     <div className="details-container">
@@ -26,10 +24,8 @@ const DetailsPage = () => {
             <div className="save-detail">
             <ToggleSave
           mushroomId={mushroom.id}
-          isSavedInitially={isToggled}
-          onToggle={(mushroomId, isToggled) => toggle()}
-          isToggled={isToggled} 
-          toggle={toggle} 
+          isSaved={isSaved}
+          setIsSaved={setIsSaved}
         />
       </div>
     </div>

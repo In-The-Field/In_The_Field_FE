@@ -2,11 +2,8 @@ import React from "react";
 import "./HomePage.css";
 import ErrorPage from "../ErrorPage/ErrorPage"; 
 import ImageUpload from "../ImageUpload/ImageUpload"; 
-import ToggleSave from "../ToggleSave/ToggleSave";
-import { useToggleSave } from '../../ToggleSaveContext';
 
 const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
-  const { isToggled, toggle } = useToggleSave();
 
   return (
     <div className="home-page-container">
@@ -22,7 +19,7 @@ const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
             </button>
           </div>
           <div className="homepage-right-container">
-            {renderMushroomCards(isToggled, toggle)} 
+            {renderMushroomCards()} 
           </div>
         </div>
       ) : null}

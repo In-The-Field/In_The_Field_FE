@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import "./ImageUpload.css";
 
 const ImageUpload = ({ onImageUpload }) => {
-  // const [userImage, setUserImage] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const userFileInput = useRef(null);
   const [imageError, setImageError] = useState(null);
