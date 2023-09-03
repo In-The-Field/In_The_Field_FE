@@ -17,7 +17,7 @@ const FieldGuide = () => {
   const renderSavedMushroomCards = () => {
     if (loading) return <p>Loading...</p>;
     if (!data || !data.user.savedMushrooms.length) return <p>You have no mushrooms saved.</p>;
-    console.log(data.user.savedMushrooms)
+  
     return data.user.savedMushrooms.map((mushroom) => (
      
       <div className="mushroom-card-wrapper" key={mushroom.apiKey}>
