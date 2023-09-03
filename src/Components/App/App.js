@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom'; 
+import { Route, Routes, Navigate } from 'react-router-dom'; 
 import HomePage from '../HomePage/HomePage'; 
 import ErrorPage from '../ErrorPage/ErrorPage';
 import FieldGuide from '../FieldGuide/FieldGuide';
@@ -37,7 +37,7 @@ function App() {
   
     return data.mushrooms.map((mushroom) => (
       <div className="mushroom-card-wrapper" key={mushroom.id}>
-        <NavLink to={`details/${mushroom.id}`} className="custom-nav-link" state={mushroom}>
+        <NavLink to={`details/${mushroom.id}`} className="custom-nav-link" >
           <MushroomCard
             id={mushroom.id}
             key={mushroom.id}
@@ -66,10 +66,12 @@ function App() {
         <Nav />
         {showError && <ErrorPage error={error} />} 
         <Routes>
-          <Route path="/" element={<HomePage error={error}  userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards}/>} /> 
-          <Route path="/error" element={<ErrorPage error={error} />} /> 
-          <Route path="/myfieldguide" element={<FieldGuide error={error} setIsSaved={setIsSaved} />} />
-          <Route path="/details/:id" element={<DetailsPage setIsSaved={setIsSaved}/>} />
+          <Route path="/" element={<HomePage error={error} userImage={userImage} onImageUpload={setUserImage} renderMushroomCards={renderMushroomCards} />} />
+          <Route path="/error" element={<ErrorPage error={error} />} />
+          <Route path="/myfieldguide" element={<FieldGuide error={error} setIsSaved={setIsSaved} />}>
+            <Route path="details/:id" element={<DetailsPage setIsSaved={setIsSaved} />} />
+          </Route>
+          <Route path="details/:id" element={<DetailsPage setIsSaved={setIsSaved} />} />
         </Routes>
       </div>
   );

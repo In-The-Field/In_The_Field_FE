@@ -12,13 +12,14 @@ const FieldGuide = ({setIsSaved}) => {
   const { loading, error: queryError, data } = useQuery(GET_SAVED_USERMUSHROOMS, {
     variables: { id: userID },
   });
-
+  
   const renderSavedMushroomCards = () => {
     if (loading) return <p>Loading...</p>;
-    // if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
-    return data.user.savedMushrooms.map((mushroom) => (
-      <div className="mushroom-card-wrapper" key={mushroom.id}>
-        <NavLink to={`details/${mushroom.id}`} className="custom-nav-link" state={mushroom}>
+    if (!data || !data.user.savedMushrooms.length) return <p>You have no mushrooms saved.</p>;
+    
+    return data.user.savedMushrooms.map((mushroom) => ( 
+      <div className="mushroom-card-wrapper" key={mushroom.apiKey}>
+        <NavLink to={`../details/${mushroom.id}`} className="custom-nav-link" >
           <MushroomCard
             id={mushroom.id}
             key={mushroom.id}
@@ -31,10 +32,11 @@ const FieldGuide = ({setIsSaved}) => {
       </div>
     ));
   };
-
+  
   return (
     <div className="field-guide-container">
       <div className="field-guide-content">
+     
         {renderSavedMushroomCards()}
       </div>
     </div>
