@@ -18,7 +18,7 @@ const FieldGuide = ({setIsSaved}) => {
     if (!data || !data.user.savedMushrooms.length) return <p>You have no mushrooms saved.</p>;
     
     return data.user.savedMushrooms.map((mushroom) => ( 
-      <div className="mushroom-card-wrapper" key={mushroom.apiKey}>
+      <div className="mushroom-card-wrapper" key={mushroom.id}>
         <NavLink to={`../details/${mushroom.id}`} className="custom-nav-link" >
           <MushroomCard
             id={mushroom.id}

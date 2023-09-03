@@ -49,7 +49,6 @@ function App() {
         </NavLink>
         <ToggleSave
           mushroomId={mushroom.id}
-          // isSaved={isSaved}
           setIsSaved={setIsSaved}
         />
       </div>
