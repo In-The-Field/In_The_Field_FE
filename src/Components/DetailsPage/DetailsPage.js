@@ -1,17 +1,35 @@
 import React from "react";
 import "./DetailsPage.css";
-import { useLocation } from "react-router-dom";
+import {  useParams, redirect } from "react-router-dom";
 import ToggleSave from "../ToggleSave/ToggleSave";
 import { handleNoLookAlikes, handleNullCharacteristics } from "../../utils";
-import { useToggleSave } from '../../ToggleSaveContext';
+import { GET_MUSHROOM_DETAILS} from "../../queries"
+import { useQuery } from '@apollo/client';
 
-const DetailsPage = () => {
-  const location = useLocation();
-  const mushroom = location.state;
-  const taxonomy = mushroom.taxonomies[0];
-  const characteristics = mushroom.characteristics[0];
-  const lookAlikesValue = handleNoLookAlikes(mushroom.lookAlikes);
-  const { isToggled, toggle } = useToggleSave();
+const DetailsPage = ({ setIsSaved }) => {
+  let mushroomId = useParams().id
+
+  const { loading, error, data } = useQuery(GET_MUSHROOM_DETAILS, {
+    variables: { id: mushroomId},
+  });
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (!data) {
+    return <div>Data not available.</div>;
+  }
+
+  const {id, description, edibility, photo, commonName, latinName, psychoactive} = data.mushroom;
+  const { genus, order, kingdom, phylum, family } = data.mushroom.taxonomies[0];
+  const {hymeniumType, stipeCharacter, sporePrintColor, mushroomCapShape, hymeniumAttachment, mushroomEcologicalType} = data.mushroom.characteristics[0];
+  const lookAlikes = data.mushroom.lookAlikes;
+  const lookAlikesValue = handleNoLookAlikes(lookAlikes);
 
   return (
     <div className="details-container">
@@ -19,17 +37,14 @@ const DetailsPage = () => {
         <div className="image-latin-common-container">
           <div className="pic">
             <div className="name-holder">
-              <h2 className="latin-name">{mushroom.latinName}</h2>
-              <p>{mushroom.commonName}</p>
+              <h2 className="latin-name">{latinName}</h2>
+              <p>{commonName}</p>
             </div>
-            <img className="details-image" src={mushroom.photo} alt="mushroom" />
+            <img className="details-image" src={photo} alt="mushroom" />
             <div className="save-detail">
             <ToggleSave
-          mushroomId={mushroom.id}
-          isSavedInitially={isToggled}
-          onToggle={(mushroomId, isToggled) => toggle()}
-          isToggled={isToggled} 
-          toggle={toggle} 
+          setIsSaved={setIsSaved}
+          mushroomId={id}
         />
       </div>
     </div>
@@ -37,33 +52,33 @@ const DetailsPage = () => {
             <div className="taxonomy-edibility-lookalike-psychoactive">
               <div className="taxonomy">
                 <h3>Taxonomy:</h3>
-                <p>Genus: {taxonomy.genus}</p>
-                <p>Order: {taxonomy.order}</p>
-                <p>Family: {taxonomy.family}</p>
-                <p>Phylum: {taxonomy.phylum}</p>
-                <p> Kingdom: {taxonomy.kingdom}</p>
+                <p>Genus: {genus}</p>
+                <p>Order: {order}</p>
+                <p>Family: {family}</p>
+                <p>Phylum: {phylum}</p>
+                <p> Kingdom: {kingdom}</p>
               </div>
               <div className="info">
                 <p>
-                  <strong>Edibility: </strong> {mushroom.edibility || "not provided"}{" "}
+                  <strong>Edibility: </strong> {edibility || "not provided"}{" "}
                 </p>
                 <p>
                   <strong>Lookalike: </strong> {lookAlikesValue}
                 </p>
                 <p>
                   <strong>Psychoactive: </strong>{" "}
-                  {mushroom.psychoactive === null ? "not provided" : mushroom.psychoactive ? "true" : "false"}
+                  {psychoactive === null ? "not provided" : psychoactive ? "true" : "false"}
                 </p>
               </div>
             </div>
             <div className="characteristics">
               <h3>Characteristics:</h3>
-              <p> Hymenium Type: {handleNullCharacteristics(characteristics.hymeniumType)}</p>
-              <p> Stipe Character: {handleNullCharacteristics(characteristics.stipeCharacter)}</p>
-              <p> Spore Print Color: {handleNullCharacteristics(characteristics.sporePrintColor)}</p>
-              <p> Mushroom Cap Shape: {handleNullCharacteristics(characteristics.mushroomCapShape)}</p>
-              <p> Hymenium Attachment: {handleNullCharacteristics(characteristics.hymeniumAttachment)}</p>
-              <p> Mushroom Ecological Type: {handleNullCharacteristics(characteristics.mushroomEcologicalType)}</p>
+              <p> Hymenium Type: {handleNullCharacteristics(hymeniumType)}</p>
+              <p> Stipe Character: {handleNullCharacteristics(stipeCharacter)}</p>
+              <p> Spore Print Color: {handleNullCharacteristics(sporePrintColor)}</p>
+              <p> Mushroom Cap Shape: {handleNullCharacteristics(mushroomCapShape)}</p>
+              <p> Hymenium Attachment: {handleNullCharacteristics(hymeniumAttachment)}</p>
+              <p> Mushroom Ecological Type: {handleNullCharacteristics(mushroomEcologicalType)}</p>
             </div>
           </div>
         </div>
@@ -72,7 +87,7 @@ const DetailsPage = () => {
       <div className="description">
         <p>
           <strong>Description: </strong>
-          {mushroom.description}
+          {description}
         </p>
       </div>
     </div>
