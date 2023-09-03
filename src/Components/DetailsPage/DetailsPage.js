@@ -9,10 +9,8 @@ import { useQuery } from '@apollo/client';
 
 
 const DetailsPage = () => {
-  console.log('hello')
-
   let mushroomId = useParams().id
-  
+
   const { loading, error, data } = useQuery(GET_MUSHROOM_DETAILS, {
     variables: { id: mushroomId},
   });
@@ -28,20 +26,13 @@ const DetailsPage = () => {
   if (!data) {
     return <div>Data not available.</div>;
   }
-  console.log("dat.msuhroom",data.mushroom)
-  const {id, description, edibility, photo, commonName, latinName, psychoactive} = data.mushroom
-  const lookAlikes = data.mushroom.lookAlikes
 
+  const {id, description, edibility, photo, commonName, latinName, psychoactive} = data.mushroom;
+  const { genus, order, kingdom, phylum, family } = data.mushroom.taxonomies[0];
+  const {hymeniumType, stipeCharacter, sporePrintColor, mushroomCapShape, hymeniumAttachment, mushroomEcologicalType} = data.mushroom.characteristics[0];
+  const lookAlikes = data.mushroom.lookAlikes;
   const lookAlikesValue = handleNoLookAlikes(lookAlikes);
- 
-  console.log(data.taxonomy)
-  const { genus, order, kingdom, phylum, family } = data.mushroom.taxonomies[0]
 
-  const {hymeniumType, stipeCharacter, sporePrintColor, mushroomCapShape, hymeniumAttachment, mushroomEcologicalType} = data.mushroom.characteristics[0]
-  console.log(mushroomId)
-
-
-  
   return (
     <div className="details-container">
       <div className="grid-container">
