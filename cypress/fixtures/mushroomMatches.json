@@ -3,21 +3,21 @@
     "mushrooms": [
       {
         "id": 1,
-        "probability": "48.42",
+        "probability": ".48",
         "commonName": "Coker's Amanita",
         "latinName": "Amanita cokeri",
-        "photo": "Amanita cokeri.jpeg"
+        "photo": "Amanita-cokeri.jpeg"
       },
       {
         "id": 2,
-        "probability": "48.32",
+        "probability": ".48",
         "commonName": "Pinecone Amanita, Great Pine Jewel, Great-Warted Lepidella",
         "latinName": "Amanita magniverrucata",
         "photo": "Amanite magniverrucata.jpeg"
       },
       {
         "id": 3,
-        "probability": "4",
+        "probability": ".4",
         "commonName": "",
         "latinName": "Amanita solitaria",
         "photo": "Aspidella solitaria.jpeg"
