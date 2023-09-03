@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const TOGGLE_SAVE_MUSHROOM = gql`
+export const SAVE_DELETE_USER_MUSHROOM = gql`
 mutation saveUserMushrooms($userId: ID!, $mushroomId: ID!) {
   saveUserMushrooms(input:{userId: $userId, mushroomId: $mushroomId}) {
     userMushroom {
@@ -23,9 +23,6 @@ mutation saveUserMushrooms($userId: ID!, $mushroomId: ID!) {
 
 `;
 
-
-
-// Query
 export const GET_MUSHROOM_MATCHES = gql`
   query GetMushroomMatches($image: String!) {
     mushrooms(image: $image) {

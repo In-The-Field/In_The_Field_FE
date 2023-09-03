@@ -6,9 +6,8 @@ import { useQuery } from '@apollo/client';
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { NavLink } from 'react-router-dom';
 
-
-const FieldGuide = () => {
-  const userID = 5
+const FieldGuide = ({setIsSaved}) => {
+  const userID = 4
 
   const { loading, error: queryError, data } = useQuery(GET_SAVED_USERMUSHROOMS, {
     variables: { id: userID },
@@ -17,9 +16,8 @@ const FieldGuide = () => {
   const renderSavedMushroomCards = () => {
     if (loading) return <p>Loading...</p>;
     if (!data || !data.user.savedMushrooms.length) return <p>You have no mushrooms saved.</p>;
-  
-    return data.user.savedMushrooms.map((mushroom) => (
-     
+    
+    return data.user.savedMushrooms.map((mushroom) => ( 
       <div className="mushroom-card-wrapper" key={mushroom.apiKey}>
         <NavLink to={`../details/${mushroom.id}`} className="custom-nav-link" >
           <MushroomCard
@@ -30,7 +28,7 @@ const FieldGuide = () => {
             commonNames={mushroom.commonName} 
           />
         </NavLink>
-        <ToggleSave mushroomId={mushroom.id} isSavedInitially={false} /> 
+        <ToggleSave mushroomId={mushroom.id} setIsSaved={setIsSaved} /> 
       </div>
     ));
   };

@@ -3,12 +3,10 @@ import "./DetailsPage.css";
 import {  useParams, redirect } from "react-router-dom";
 import ToggleSave from "../ToggleSave/ToggleSave";
 import { handleNoLookAlikes, handleNullCharacteristics } from "../../utils";
-import { useToggleSave } from '../../ToggleSaveContext';
 import { GET_MUSHROOM_DETAILS} from "../../queries"
 import { useQuery } from '@apollo/client';
 
-
-const DetailsPage = () => {
+const DetailsPage = ({ setIsSaved }) => {
   let mushroomId = useParams().id
 
   const { loading, error, data } = useQuery(GET_MUSHROOM_DETAILS, {
@@ -45,11 +43,8 @@ const DetailsPage = () => {
             <img className="details-image" src={photo} alt="mushroom" />
             <div className="save-detail">
             <ToggleSave
+          setIsSaved={setIsSaved}
           mushroomId={id}
-          // isSavedInitially={isToggled}
-          // onToggle={(mushroomId, isToggled) => toggle()}
-          // isToggled={isToggled} 
-          // toggle={toggle} 
         />
       </div>
     </div>
