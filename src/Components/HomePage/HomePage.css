@@ -96,6 +96,7 @@
     background-color: rgba(242, 201, 185, 0.8);
     border: 5px solid #ffdab9;
     justify-content: space-evenly;
+    margin-right: 10px;
   }
 
   .homepage-left-container {
