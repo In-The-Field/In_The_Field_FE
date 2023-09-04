@@ -5,13 +5,11 @@
   align-items: center;
 }
 
-
 .homepage-flex-container {
   display: flex;
   align-items: flex-start;
 }
 
-  
   .content-container {
     background-color: rgba(242, 201, 185, 0.8);
     padding: 20px;
@@ -37,7 +35,7 @@
   
   p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-family: cursive;
   }
   
@@ -82,29 +80,35 @@
   }
 
   .homepage-right-container {
-    background-color: rgba(242, 201, 185, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 14px 19px rgba(0, 0, 0, 0.1);
-    color: #624612;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    padding: 20px;
     overflow-y: scroll;
-    max-height: calc(100vh - 200px);
+    height: 80vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    scrollbar-color: #fbc4ab #ffdab9;
+    margin-bottom: 5rem;
+    gap: 15px;
+    background-color: rgba(242, 201, 185, 0.8);
     border: 5px solid #ffdab9;
+    justify-content: space-evenly;
   }
 
   .homepage-left-container {
     display: flex;
     flex-direction: column; 
     align-items: center;
-    /* justify-content: center; */
-    /* width: 40%; */
     margin: 50px auto 0 50px;
     background-color: rgba(242, 201, 185, 0.8);
     border-radius: 10px;
     padding: 30px;
     gap: 20px;
     border: 5px solid #ffdab9;
+    margin: 4px;
   }
 
   .homepage-content-container {
@@ -115,3 +119,38 @@
     gap: 100px;
   }
   
+@media screen and (max-width: 767px) {
+
+  .homepage-right-container {
+    flex-direction: column; 
+    height: auto; 
+    overflow-y: visible; 
+  }
+
+  .homepage-left-container {
+    margin: 20px auto; 
+    margin-left: 50px;
+    
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #photo-form {
+    height: 20rem;
+    width: 90%;
+  }
+
+  .label-photo-input {
+    border: 3px dashed black;
+  }
+
+  .upload-button {
+    font-size: 1.5rem;
+    padding: 10px 15px;
+  }
+
+  .user-image {
+    max-width: 100%;
+    height: auto;
+  }
+}

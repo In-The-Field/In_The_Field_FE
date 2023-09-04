@@ -8,6 +8,7 @@
   border: 2px solid #624612;;
   height: 40px;
   border-radius: 18px;
+  margin-right: 10px;
 }
 
 .toggle-background {
@@ -23,7 +24,7 @@
 
 .toggle-image {
   width: 36px; 
-  margin-top: 0px;
+  margin-top: -14px;
   height: auto;
   transition: transform 0.3s;
 }

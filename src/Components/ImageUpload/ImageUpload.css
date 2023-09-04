@@ -46,3 +46,49 @@
   width: 345px;
 }
 
+@media screen and (max-width: 767px) {
+  #photo-form {
+    height: auto;
+    width: 90%;
+  }
+
+  .label-photo-input {
+    border: 3px dashed black;
+  }
+
+  .upload-button {
+    font-size: 1.5rem;
+    padding: 10px 15px;
+  }
+
+  .user-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  #photo-form {
+    height: 20rem;
+    width: 90%;
+  }
+
+  .label-photo-input {
+    border: 3px dashed black;
+  }
+
+  .upload-button {
+    font-size: 1.5rem;
+    padding: 10px 15px;
+  }
+
+  .user-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Large screens (992px and above) */
+@media screen and (min-width: 992px) {
+}
