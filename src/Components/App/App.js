@@ -32,6 +32,7 @@ function App() {
   }, [queryError])
 
   const renderMushroomCards = () => {
+    console.log('data POST', data )
     if (loading) return <p>Loading...</p>;
     if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
   

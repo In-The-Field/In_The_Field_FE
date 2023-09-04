@@ -2,25 +2,102 @@
   "data": {
     "mushrooms": [
       {
-        "id": 1,
-        "probability": ".48",
+        "id": "1",
+        "apiId": "a870fac755040c92",
+        "probability": 0.48050135,
+        "psychoactive": false,
         "commonName": "Coker's Amanita",
         "latinName": "Amanita cokeri",
-        "photo": "Amanita-cokeri.jpeg"
+        "edibility": "poisonous",
+        "photo": "cypress/fixtures/Amanita-cokeri.jpeg",
+        "photoCitation": "https://mushroomobserver.org/observer/show_user/445",
+
+        "characteristics": {
+        "hymeniumType": "lamella",
+        "stipeCharacter": "ring and volva stipe",
+        "sporePrintColor": "white",
+        "mushroomCapShape": "convex mushroom cap",
+        "hymeniumAttachment": "free hymenium attachment",
+        "mushroomEcologicalType": "null"
+        },
+
+        "lookAlikes": [],
+
+        "taxonomies": {
+          "genus": "Amanita",
+          "order": "Agaricales",
+          "family": "Amanitaceae",
+          "phylum": "Basidiomycota",
+          "kingdom": "Fungi"
+        },
+
+        "description": "Description: Amanita cokeri, commonly known as Coker's amanita and solitary lepidella, is a mushroom in the family Amanitaceae. The  mushroom is poisonous. First described as Lepidella cokeri in 1928, it was transferred to the genus Amanita in 1940."
+
       },
       {
-        "id": 2,
-        "probability": ".48",
+        "id": "2",
+        "apiId": "1fef800d31afca1c",
+        "probability": 0.47770783,
+        "psychoactive": null,
         "commonName": "Pinecone Amanita, Great Pine Jewel, Great-Warted Lepidella",
         "latinName": "Amanita magniverrucata",
-        "photo": "Amanite magniverrucata.jpeg"
+        "edibility": null,
+        "photo": "cypress/fixtures/Amanite-magniverrucata.jpeg",
+        "photoCitation": "https://mushroomobserver.org/observer/show_user/2825",
+
+        "characteristics": {
+          "hymeniumType": "lamella",
+          "stipeCharacter": "ring and volva stipe",
+          "sporePrintColor": "white",
+          "mushroomCapShape": "convex mushroom cap",
+          "hymeniumAttachment": "free hymenium attachment",
+          "mushroomEcologicalType": "mmycorrhiza"
+          },
+  
+          "lookAlikes": "Pinecone Amanita, Great Pine Jewel, Great-Warted Lepidella",
+  
+          "taxonomies": {
+            "genus": "Amanita",
+            "order": "Agaricales",
+            "family": "Amanitaceae",
+            "phylum": "Basidiomycota",
+            "kingdom": "Fungi"
+          },
+  
+          "description": "Amanita magniverrucata, commonly known as great pine jewel, is a species of agaric mushroom in the family Amanitaceae. First described scientifically by American mycologists Harry Delbert Thiers and Joseph Ammirati in 1982, it is mycorrhizal and associates with the tree Pinus radiata.While its edibility is unknown, it may be poisonous, as are many Amanitas."
+
       },
       {
-        "id": 3,
-        "probability": ".4",
+        "id": "13",
+        "apiId": "ee0610b91db13888",
+        "probability": 0.04119591,
+        "psychoactive": null,
         "commonName": "",
         "latinName": "Amanita solitaria",
-        "photo": "Aspidella solitaria.jpeg"
+        "edibility": null,
+        "photo": "cypress/fixtures/Aspidella-solitaria.jpeg",
+        "photoCitation": "https://commons.wikimedia.org/wiki/File:Am.echin.jpg",
+        
+        "characteristics": {
+          "hymeniumType": null,
+          "stipeCharacter": null,
+          "sporePrintColor": null,
+          "mushroomCapShape": null,
+          "hymeniumAttachment": null,
+          "mushroomEcologicalType": null
+          },
+
+        "lookAlikes": [],
+        
+        "taxonomies": {
+          "genus": "Aspidella",
+          "order": "Agaricales",
+          "family": "Amanitaceae",
+          "phylum": "Basidiomycota",
+          "kingdom": "Fungi"
+        },
+
+        "description": "Amanita echinocephala is a large, whitish or ivory-coloured mushroom with a characteristic spiny, or warty-looking cap. It lives on chalky soils with beech trees, and appears earlier than most mushrooms of similar size in southern England. It frequently occurs singly or in small groups, resulting in it being referred to as the solitary amanita or, more specifically, European solitary lepidella. It is very drought-tolerant. Amanita solitaria is a synonym and opinions are divided as to which name takes precedence."
       }
     ]
   }
