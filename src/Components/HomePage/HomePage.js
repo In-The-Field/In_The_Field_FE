@@ -1,7 +1,8 @@
 import React from "react";
 import "./HomePage.css";
 import ErrorPage from "../ErrorPage/ErrorPage"; 
-import ImageUpload from "../ImageUpload/ImageUpload"; 
+import ImageUpload from "../ImageUpload/ImageUpload";
+import PropTypes from 'prop-types'; 
 
 const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
 
@@ -39,6 +40,13 @@ const HomePage = ({ error, userImage, onImageUpload, renderMushroomCards }) => {
       )}
     </div>
   );
+};
+
+HomePage.propTypes = {
+  error: PropTypes.string,
+  userImage: PropTypes.string,
+  onImageUpload: PropTypes.func.isRequired, 
+  renderMushroomCards: PropTypes.func.isRequired, 
 };
 
 export default HomePage;
