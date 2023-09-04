@@ -5,9 +5,10 @@ import toggleOnImage from "../images/color toggle (1).png";
 import "../ToggleSave/ToggleSave.css";
 import { useMutation, useQuery } from "@apollo/client";
 import { SAVE_DELETE_USER_MUSHROOM, GET_SAVED_USERMUSHROOMS } from "../../queries";
+import PropTypes from 'prop-types';
 
 const ToggleSave = ({ mushroomId, setIsSaved }) => {
-  const userId = 4;
+  const userId = 2;
 
   const { data: cachedData } = useQuery(GET_SAVED_USERMUSHROOMS, {
     variables: { id: userId },
@@ -56,6 +57,11 @@ const ToggleSave = ({ mushroomId, setIsSaved }) => {
       />
     </button>
   );
+};
+
+ToggleSave.propTypes = {
+  mushroomId: PropTypes.string.isRequired,
+  setIsSaved: PropTypes.func.isRequired, 
 };
 
 export default ToggleSave;

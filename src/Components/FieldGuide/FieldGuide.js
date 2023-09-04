@@ -45,7 +45,7 @@ const FieldGuide = ({setIsSaved}) => {
 };
 
 FieldGuide.propTypes = {
-  setIsSaved: PropTypes.func.isRequired, // Example: setIsSaved should be a required function prop
+  setIsSaved: PropTypes.func.isRequired,
 };
 
 export default FieldGuide;

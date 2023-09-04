@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./ImageUpload.css";
+import PropTypes from 'prop-types';
 
 const ImageUpload = ({ onImageUpload }) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -88,6 +89,10 @@ const ImageUpload = ({ onImageUpload }) => {
       )}
     </form>
   );
+};
+
+ImageUpload.propTypes = {
+  onImageUpload: PropTypes.func.isRequired,
 };
 
 export default ImageUpload;
