@@ -65,9 +65,11 @@
     max-width: 100%;
     height: auto;
   }
+
+  /* Add any other styles specific to small screens here */
 }
 
-
+/* Medium screens (768px - 991px) */
 @media screen and (min-width: 768px) and (max-width: 991px) {
   #photo-form {
     height: 20rem;
@@ -87,8 +89,11 @@
     max-width: 100%;
     height: auto;
   }
+
+  /* Add any other styles specific to medium screens here */
 }
 
 /* Large screens (992px and above) */
 @media screen and (min-width: 992px) {
+  /* Add any styles specific to large screens here */
 }
