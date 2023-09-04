@@ -5,9 +5,10 @@ import { GET_SAVED_USERMUSHROOMS } from "../../queries"
 import { useQuery } from '@apollo/client';
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const FieldGuide = ({setIsSaved}) => {
-  const userID = 4
+  const userID = 2
 
   const { loading, error: queryError, data } = useQuery(GET_SAVED_USERMUSHROOMS, {
     variables: { id: userID },
@@ -41,6 +42,10 @@ const FieldGuide = ({setIsSaved}) => {
       </div>
     </div>
   );
+};
+
+FieldGuide.propTypes = {
+  setIsSaved: PropTypes.func.isRequired, // Example: setIsSaved should be a required function prop
 };
 
 export default FieldGuide;
