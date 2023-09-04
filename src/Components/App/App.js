@@ -11,6 +11,7 @@ import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { useQuery } from '@apollo/client';
 import { GET_MUSHROOM_MATCHES } from '../../queries';
+import PropTypes from 'prop-types';
 
 function App() {
   const [showError, setShowError] = useState(false);

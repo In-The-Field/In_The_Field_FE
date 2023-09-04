@@ -5,6 +5,7 @@ import ToggleSave from "../ToggleSave/ToggleSave";
 import { handleNoLookAlikes, handleNullCharacteristics } from "../../utils";
 import { GET_MUSHROOM_DETAILS} from "../../queries"
 import { useQuery } from '@apollo/client';
+import PropTypes from "prop-types";
 
 const DetailsPage = ({ setIsSaved }) => {
   let mushroomId = useParams().id
@@ -94,6 +95,10 @@ const DetailsPage = ({ setIsSaved }) => {
             
     </div>
   );
+};
+
+DetailsPage.propTypes = {
+  setIsSaved: PropTypes.func.isRequired,
 };
 
 export default DetailsPage;
