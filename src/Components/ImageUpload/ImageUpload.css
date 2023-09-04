@@ -59,6 +59,7 @@
   .upload-button {
     font-size: 1.5rem;
     padding: 10px 15px;
+    width: 100%;
   }
 
   .user-image {

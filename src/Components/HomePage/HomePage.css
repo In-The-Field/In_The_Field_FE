@@ -108,7 +108,7 @@
     padding: 30px;
     gap: 20px;
     border: 5px solid #ffdab9;
-    margin: 4px;
+    
   }
 
   .homepage-content-container {
@@ -119,20 +119,35 @@
     gap: 100px;
   }
   
-@media screen and (max-width: 767px) {
-
-  .homepage-right-container {
-    flex-direction: column; 
-    height: auto; 
-    overflow-y: visible; 
+  @media screen and (max-width: 528px) {
+    /* Additional styles for screens 500px and below */
+  
+    .homepage-flex-container {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+      align-items: center;
+    }
+  
+    .homepage-right-container {
+      /* Adjust styles for right container on smaller screens */
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+  
+    .homepage-left-container {
+      /* Adjust styles for left container on smaller screens */
+      margin: 20px auto;
+      padding: 20px;
+    }
+  
+    .homepage-content-container {
+      /* Adjust styles for content container on smaller screens */
+      gap: 20px;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 3%;
+    }
   }
-
-  .homepage-left-container {
-    margin: 20px auto; 
-    margin-left: 50px;
-    
-  }
-}
+  
 
 @media screen and (max-width: 768px) {
   #photo-form {
@@ -153,4 +168,12 @@
     max-width: 100%;
     height: auto;
   }
+  
+  .homepage-left-container {
+    margin: 20px auto;
+    padding: 20px;
+    height: 100%;
+    width: 80%;
+  }
+
 }

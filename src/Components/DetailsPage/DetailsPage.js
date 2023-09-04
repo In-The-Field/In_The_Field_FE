@@ -33,15 +33,12 @@ const DetailsPage = ({ setIsSaved }) => {
 
   return (
     <div className="details-container">
-      <div className="name-holder">
-          <h2 className="latin-name">{latinName}</h2>
-          <p>{commonName}</p>
-        </div>
       <div className="grid-container">
         <div className="image-latin-common-container">
           <div className="pic">
             <img className="details-image" src={photo} alt="mushroom" />
             <div className="save-detail">
+              
             <ToggleSave
           setIsSaved={setIsSaved}
           mushroomId={id}
@@ -90,6 +87,10 @@ const DetailsPage = ({ setIsSaved }) => {
           {description}
         </p>
       </div>
+            <div className="name-holder">
+             <h2 className="latin-name">{latinName}</h2>
+             <p>{commonName}</p>
+             </div>
     </div>
   );
 };
