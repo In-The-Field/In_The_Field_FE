@@ -5,11 +5,11 @@
 
 .details-container {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   color: #624612;
   padding: 2rem 20px 20px 20px;
   text-align: center;
-  height: 120vh;
+  height: 140vh;
 }
 
 .save-detail {

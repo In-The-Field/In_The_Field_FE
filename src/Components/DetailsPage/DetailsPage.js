@@ -33,6 +33,10 @@ const DetailsPage = ({ setIsSaved }) => {
 
   return (
     <div className="details-container">
+      <div className="name-holder">
+        <h2 className="latin-name">{latinName}</h2>
+        <p>{commonName}</p>
+      </div>
       <div className="grid-container">
         <div className="image-latin-common-container">
           <div className="pic">
@@ -87,10 +91,7 @@ const DetailsPage = ({ setIsSaved }) => {
           {description}
         </p>
       </div>
-            <div className="name-holder">
-             <h2 className="latin-name">{latinName}</h2>
-             <p>{commonName}</p>
-             </div>
+            
     </div>
   );
 };
