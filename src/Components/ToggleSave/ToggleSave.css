@@ -23,7 +23,7 @@
 
 .toggle-image {
   width: 36px; 
-  margin-top: 0px;
+  margin-top: -15px;
   height: auto;
   transition: transform 0.3s;
 }
