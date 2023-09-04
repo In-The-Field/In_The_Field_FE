@@ -77,10 +77,4 @@ function App() {
   );
 }
 
-App.propTypes = {
-  userImage: PropTypes.string,
-  setUserImage: PropTypes.func,
-  isSaved: PropTypes.bool
-};
-
 export default App;
