@@ -1,6 +1,6 @@
 .mushroom-card {
   background-color: rgba(242, 201, 185, 0.8);
-  border: 5px solid #ffdab9;
+  border: 5px dashed #624612;
   border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px;
@@ -10,6 +10,12 @@
   position: relative;
   overflow: hidden; 
 }
+
+  .mushroom-card-wrapper{
+    height: auto;
+    display: grid;
+    justify-items: center;
+  }
 
   .mushroom-image {
     max-width: 100%;
@@ -38,8 +44,9 @@
   }
   
   .probability {
-    font-size: 25px;
+    font-size: 18px;
     color: #624612;
+    padding: 30px;
   }
   
   .toggle-container {
@@ -47,8 +54,8 @@
   }
   
   h2{
-    font-family: cursive;
     color: #624612;
+    font-size: 17px;
   }
 
   .tax-charact-cont {
