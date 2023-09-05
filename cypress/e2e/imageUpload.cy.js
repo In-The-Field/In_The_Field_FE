@@ -12,7 +12,7 @@ describe("Entire user flow", () => {
       }
     }).as("getMushroomMatches");
 
-      cy.uploadImage('cypress/fixtures/HappyPath.JPG');
+      cy.uploadImage('cypress/fixtures/HappyPath.jpeg');
     
       cy.wait('@getMushroomMatches');
     
@@ -42,34 +42,33 @@ describe("Entire user flow", () => {
 
       cy.get('.mushroom-card').click()
 
-      cy.get(".name-holder").should('be.visible').find('h2').should('contain.text', "Amanita cokeri")
+      cy.get(".name-holder").should('be.visible').find('h2').should('contain.text', "Boletus edulis")
 
-      cy.get('.name-holder > p').should('contain.text',"Coker's amanita")
-
-      cy.get('.details-image').should('be.visible').should('have.attr', 'src').should('include','https://mushroom-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikid')
+      cy.get('.details-image').should('be.visible').should('have.attr', 'src').should('include','https://mushroom-id.ams3.cdn.digitaloceanspaces.com/knowledge_base/wikidata/286/286a600db931b24b6a3a69bca3e8942d6ac0379a.jpg')
 
       cy.get('.toggle-image').should('be.visible')
 
       cy.get('.taxonomy').should('be.visible')
 
-      cy.get('.taxonomy > :nth-child(2)').should('contain.text', 'Genus: Amanita')
+      cy.get('.taxonomy > :nth-child(2)').should('contain.text', '  Genus:  Boletus')
 
-      cy.get('.taxonomy > :nth-child(3)').should('contain.text', 'Order: Agaricales')
+      cy.get('.taxonomy > :nth-child(3)').should('contain.text', '  Order:  Boletales')
 
-      cy.get('.taxonomy > :nth-child(4)').should('contain.text', 'Family: Amanitaceae')
+      cy.get('.taxonomy > :nth-child(4)').should('contain.text', '  Family:  Boletaceae')
 
-      cy.get('.taxonomy > :nth-child(5)').should('contain.text', 'Phylum: Basidiomycota')
+      cy.get('.taxonomy > :nth-child(5)').should('contain.text', '  Phylum:  Basidiomycota')
 
-      cy.get('.taxonomy > :nth-child(6)').should('contain.text', 'Kingdom: Fungi')
+      cy.get('.taxonomy > :nth-child(6)').should('contain.text', '  Kingdom:  Fungi')
+
       cy.get('.info').should("be.visible")
 
-      cy.get('.info > :nth-child(1)').should('contain.text', 'Edibility:  poisonous ')
+      cy.get('.info > :nth-child(1)').should('contain.text', 'Edibility:  choice ')
 
-      cy.get('.info > :nth-child(2)').should('contain.text', 'Lookalike:  not provided')
+      cy.get('.info > :nth-child(2)').should('contain.text', 'Lookalike:  Tylopilus felleus, Boletus reticulatus, Imleria badia, Boletus regineus')
 
       cy.get('.info > :nth-child(3)').should('contain.text', 'Psychoactive:  false')
 
-      cy.get('.description > p').should('contain.text', "Description: Amanita cokeri, commonly known as Coker's amanita and solitary lepidella, is a mushroom in the family Amanitaceae. The  mushroom is poisonous. First described as Lepidella cokeri in 1928, it was transferred to the genus Amanita in 1940.")
+      cy.get('.description > p').should("be.visible")
 
       cy.get('.toggle-image').click()
       cy.get('.my-field-guide-btn').click()

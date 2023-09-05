@@ -8,7 +8,7 @@ import { SAVE_DELETE_USER_MUSHROOM, GET_SAVED_USERMUSHROOMS } from "../../querie
 import PropTypes from 'prop-types';
 
 const ToggleSave = ({ mushroomId, setIsSaved }) => {
-  const userId = 2;
+  const userId = 1;
 
   const { data: cachedData } = useQuery(GET_SAVED_USERMUSHROOMS, {
     variables: { id: userId },

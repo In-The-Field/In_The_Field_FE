@@ -2,102 +2,102 @@
   "data": {
     "mushrooms": [
       {
-        "id": "1",
-        "apiId": "a870fac755040c92",
-        "probability": 0.48050135,
+        "id": "4",
+        "apiId": "558fbb57c985b800",
+        "probability": 0.9615185,
         "psychoactive": false,
-        "commonName": "Coker's Amanita",
-        "latinName": "Amanita cokeri",
-        "edibility": "poisonous",
-        "photo": "cypress/fixtures/Amanita-cokeri.jpeg",
-        "photoCitation": "https://mushroomobserver.org/observer/show_user/445",
+        "commonName": "Cep, King Bolete, Penny Bun, Porcini",
+        "latinName": "Boletus edulis",
+        "edibility": "choice",
+        "photo": "cypress/fixtures/porcini.jpeg",
+        "photoCitation": "//commons.wikimedia.org/wiki/User:Holleday",
 
         "characteristics": {
-        "hymeniumType": "lamella",
-        "stipeCharacter": "ring and volva stipe",
-        "sporePrintColor": "white",
+        "hymeniumType": "pores",
+        "stipeCharacter": "bare stipe",
+        "sporePrintColor": "brown",
         "mushroomCapShape": "convex mushroom cap",
-        "hymeniumAttachment": "free hymenium attachment",
-        "mushroomEcologicalType": "null"
+        "hymeniumAttachment": "adnate hymenium attachment",
+        "mushroomEcologicalType": "mycorrhiza"
         },
 
-        "lookAlikes": [],
+        "lookAlikes": ["Tylopilus felleus", "Boletus reticulatus", "Imleria badia","Boletus regineus"],
 
         "taxonomies": {
-          "genus": "Amanita",
-          "order": "Agaricales",
-          "family": "Amanitaceae",
+          "genus": "Boletus",
+          "order": "Boletales",
+          "family": "Boletaceae",
           "phylum": "Basidiomycota",
           "kingdom": "Fungi"
         },
 
-        "description": "Description: Amanita cokeri, commonly known as Coker's amanita and solitary lepidella, is a mushroom in the family Amanitaceae. The  mushroom is poisonous. First described as Lepidella cokeri in 1928, it was transferred to the genus Amanita in 1940."
+        "description": "Boletus edulis (English: cep, penny bun, porcino or porcini) is a basidiomycete fungus, and the..."
 
       },
       {
-        "id": "2",
-        "apiId": "1fef800d31afca1c",
-        "probability": 0.47770783,
-        "psychoactive": null,
-        "commonName": "Pinecone Amanita, Great Pine Jewel, Great-Warted Lepidella",
-        "latinName": "Amanita magniverrucata",
-        "edibility": null,
-        "photo": "cypress/fixtures/Amanite-magniverrucata.jpeg",
-        "photoCitation": "https://mushroomobserver.org/observer/show_user/2825",
+        "id": "55",
+        "apiId": "b6bea5539a407a02",
+        "probability": 0.018332597,
+        "psychoactive": false,
+        "commonName": "Ruby Porcini, Ruby King Bolete",
+        "latinName": "Boletus rubriceps",
+        "edibility": "choice",
+        "photo": "cypress/fixtures/kingbolete.jpeg",
+        "photoCitation": "https://commons.wikimedia.org/wiki/File:Boletus_rubriceps_100507.jpg",
 
         "characteristics": {
-          "hymeniumType": "lamella",
-          "stipeCharacter": "ring and volva stipe",
-          "sporePrintColor": "white",
-          "mushroomCapShape": "convex mushroom cap",
-          "hymeniumAttachment": "free hymenium attachment",
+          "hymeniumType": "pores",
+          "stipeCharacter": "bare stipe",
+          "sporePrintColor": "olive brown",
+          "mushroomCapShape": null,
+          "hymeniumAttachment": "adnate hymenium attachment",
           "mushroomEcologicalType": "mmycorrhiza"
           },
   
-          "lookAlikes": "Pinecone Amanita, Great Pine Jewel, Great-Warted Lepidella",
+          "lookAlikes": [],
   
           "taxonomies": {
-            "genus": "Amanita",
-            "order": "Agaricales",
-            "family": "Amanitaceae",
+            "genus": "Boletus",
+            "order": "Boletales",
+            "family": "Boletaceae",
             "phylum": "Basidiomycota",
             "kingdom": "Fungi"
           },
   
-          "description": "Amanita magniverrucata, commonly known as great pine jewel, is a species of agaric mushroom in the family Amanitaceae. First described scientifically by American mycologists Harry Delbert Thiers and Joseph Ammirati in 1982, it is mycorrhizal and associates with the tree Pinus radiata.While its edibility is unknown, it may be poisonous, as are many Amanitas."
+          "description": "Boletus rubriceps is a species of bolete fungus in the family Boletaceae. Although it was officially described as new to science in 2014, the bolete had previously been reported as either Boletus edulis or B. pinophilus. Molecular analysis showed that it was sufficiently different from other morphologically similar Boletus species to warrant designation as a distinct species. It is found in the southwestern United States and southern Rocky Mountains, where it associates with spruce, pine, and sometimes fir. The fruit bodies are edible and highly sought after; they are often sold in farmer's markets of Arizona, New Mexico, and Colorado, and are used in some restaurants. The specific epithet refers to the reddish color of the caps..."
 
       },
       {
-        "id": "13",
-        "apiId": "ee0610b91db13888",
-        "probability": 0.04119591,
+        "id": "56",
+        "apiId": "c13d4214ccd2a2a6",
+        "probability": 0.010261552,
         "psychoactive": null,
         "commonName": "",
-        "latinName": "Amanita solitaria",
+        "latinName": "Boletus fibrillosus",
         "edibility": null,
-        "photo": "cypress/fixtures/Aspidella-solitaria.jpeg",
-        "photoCitation": "https://commons.wikimedia.org/wiki/File:Am.echin.jpg",
+        "photo": "cypress/fixtures/boletusfibrillosus.jpeg",
+        "photoCitation": "https://commons.wikimedia.org/wiki/File:Boletus_fibrillosus_7894.jpg",
         
         "characteristics": {
-          "hymeniumType": null,
-          "stipeCharacter": null,
-          "sporePrintColor": null,
+          "hymeniumType": "pores",
+          "stipeCharacter": "bare stipe",
+          "sporePrintColor": "olive brown",
           "mushroomCapShape": null,
-          "hymeniumAttachment": null,
-          "mushroomEcologicalType": null
+          "hymeniumAttachment": "adnexed hymenium attachment",
+          "mushroomEcologicalType": "mycorrhiza"
           },
 
         "lookAlikes": [],
         
         "taxonomies": {
-          "genus": "Aspidella",
-          "order": "Agaricales",
-          "family": "Amanitaceae",
+          "genus": "Boletus",
+          "order": "Boletales",
+          "family": "Boletaceae",
           "phylum": "Basidiomycota",
           "kingdom": "Fungi"
         },
 
-        "description": "Amanita echinocephala is a large, whitish or ivory-coloured mushroom with a characteristic spiny, or warty-looking cap. It lives on chalky soils with beech trees, and appears earlier than most mushrooms of similar size in southern England. It frequently occurs singly or in small groups, resulting in it being referred to as the solitary amanita or, more specifically, European solitary lepidella. It is very drought-tolerant. Amanita solitaria is a synonym and opinions are divided as to which name takes precedence."
+        "description": "Boletus fibrillosus is a basidiomycete fungus of the genus Boletus found in western North America. The fruiting bodies are found in mixed coastal forests in the fall, usually singly or in small groups. The cap is up to 17 cm wide, buff to brown to dark brown in color, and has a wrinkled to finely fibrous texture. The tubes are yellow, while the flesh is white to buff and does not stain when cut. The stem is yellowish at the top, brown otherwise, with a reticulate texture, and mycelium enshrouding the bottom. The holotype was collected in Mendocino County, California. The species is edible, but considered to have inferior taste to other edible boletes such as B. edulis, which it is often confused with.Phylogenetic analysis has shown B. fibrillosus as a member of a clade, or closely related group, with B. pinophilus, B. regineus, B. rex-veris, B. subcaerulescens, and Gastroboletus subalpinus."
       }
     ]
   }
