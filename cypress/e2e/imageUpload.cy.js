@@ -1,12 +1,12 @@
 describe("Entire user flow", () => {
   
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/");
   });
 
   it('should successfully upload the image via drag and drop, send a query, and display results', () => {
 
-    cy.intercept("POST", "https://in-the-field.onrender.com/graphql", (req) => {
+    cy.intercept("POST", "http://localhost:5000/graphql", (req) => {
       if (req.body.operationName === "GetMushroomMatches") {
         req.reply({ fixture: "mushroomMatches.json" });
       }
