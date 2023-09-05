@@ -6,7 +6,7 @@ describe("Entire user flow", () => {
 
   it('should successfully upload the image via drag and drop, send a query, and display results', () => {
 
-    cy.intercept("POST", "https://in-the-field.onrender.com/graphql", (req) => {
+    cy.intercept("POST", "http://localhost:5000/graphql", (req) => {
       if (req.body.operationName === "GetMushroomMatches") {
         req.reply({ fixture: "mushroomMatches.json" });
       }
