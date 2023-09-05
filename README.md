@@ -6,7 +6,7 @@
 
 # In the Field
 
-![Alt text](image.png)
+![logo](https://user-images.githubusercontent.com/119144613/265747085-7f913312-0b90-493c-97a5-36564117d3a8.png)
 
 ## About This Project
 ### Important to Note
@@ -61,7 +61,7 @@ npm start
 ```
 
 ## How to Use "In the Field"
- (screenshots and or giphy here)
+![home page](https://user-images.githubusercontent.com/119144613/265745670-01e247c8-08c6-4320-9181-e4049052a5c7.png)
 
 ## Contributing  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/In-The-Field/In_The_Field_FE/issues)
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
