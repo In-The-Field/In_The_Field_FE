@@ -2,7 +2,6 @@ import React from "react";
 import "./MushroomCard.css";
 import { formatProbability } from "../../utils";
 import { useLocation } from 'react-router-dom'
-import PropTypes from "prop-types"; 
 
 const MushroomCard = ({ image, latinName, commonNames, probability }) => {
   let location = useLocation()
@@ -31,13 +30,6 @@ const MushroomCard = ({ image, latinName, commonNames, probability }) => {
         </div>
       );
     }
-};
-
-MushroomCard.propTypes = {
-  image: PropTypes.string,
-  latinName: PropTypes.string, 
-  commonNames: PropTypes.string, 
-  probability: PropTypes.number, 
 };
 
 export default MushroomCard;

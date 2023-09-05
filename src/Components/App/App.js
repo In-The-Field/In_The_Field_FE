@@ -11,7 +11,6 @@ import DetailsPage from '../DetailsPage/DetailsPage';
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { useQuery } from '@apollo/client';
 import { GET_MUSHROOM_MATCHES } from '../../queries';
-import PropTypes from 'prop-types';
 
 function App() {
   const [showError, setShowError] = useState(false);
@@ -33,7 +32,6 @@ function App() {
   }, [queryError])
 
   const renderMushroomCards = () => {
-    console.log('data POST', data )
     if (loading) return <p>Loading...</p>;
     if (!data || !data.mushrooms) return <p>No mushrooms found.</p>;
   
@@ -51,6 +49,7 @@ function App() {
         </NavLink>
         <ToggleSave
           mushroomId={mushroom.id}
+          // isSaved={isSaved}
           setIsSaved={setIsSaved}
         />
       </div>

@@ -5,10 +5,9 @@ import { GET_SAVED_USERMUSHROOMS } from "../../queries"
 import { useQuery } from '@apollo/client';
 import ToggleSave from '../ToggleSave/ToggleSave';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 const FieldGuide = ({setIsSaved}) => {
-  const userID = 2
+  const userID = 4
 
   const { loading, error: queryError, data } = useQuery(GET_SAVED_USERMUSHROOMS, {
     variables: { id: userID },
@@ -19,7 +18,7 @@ const FieldGuide = ({setIsSaved}) => {
     if (!data || !data.user.savedMushrooms.length) return <p>You have no mushrooms saved.</p>;
     
     return data.user.savedMushrooms.map((mushroom) => ( 
-      <div className="mushroom-card-wrapper" key={mushroom.id}>
+      <div className="mushroom-card-wrapper" key={mushroom.apiKey}>
         <NavLink to={`../details/${mushroom.id}`} className="custom-nav-link" >
           <MushroomCard
             id={mushroom.id}
@@ -42,10 +41,6 @@ const FieldGuide = ({setIsSaved}) => {
       </div>
     </div>
   );
-};
-
-FieldGuide.propTypes = {
-  setIsSaved: PropTypes.func.isRequired,
 };
 
 export default FieldGuide;

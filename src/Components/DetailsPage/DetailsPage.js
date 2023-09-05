@@ -5,7 +5,6 @@ import ToggleSave from "../ToggleSave/ToggleSave";
 import { handleNoLookAlikes, handleNullCharacteristics } from "../../utils";
 import { GET_MUSHROOM_DETAILS} from "../../queries"
 import { useQuery } from '@apollo/client';
-import PropTypes from "prop-types";
 
 const DetailsPage = ({ setIsSaved }) => {
   let mushroomId = useParams().id
@@ -34,16 +33,15 @@ const DetailsPage = ({ setIsSaved }) => {
 
   return (
     <div className="details-container">
-      <div className="name-holder">
-        <h2 className="latin-name">{latinName}</h2>
-        <p>{commonName}</p>
-      </div>
       <div className="grid-container">
         <div className="image-latin-common-container">
           <div className="pic">
+            <div className="name-holder">
+              <h2 className="latin-name">{latinName}</h2>
+              <p>{commonName}</p>
+            </div>
             <img className="details-image" src={photo} alt="mushroom" />
             <div className="save-detail">
-              
             <ToggleSave
           setIsSaved={setIsSaved}
           mushroomId={id}
@@ -54,11 +52,11 @@ const DetailsPage = ({ setIsSaved }) => {
             <div className="taxonomy-edibility-lookalike-psychoactive">
               <div className="taxonomy">
                 <h3>Taxonomy:</h3>
-                <p> <strong> Genus: </strong> {genus}</p>
-                <p> <strong> Order: </strong> {order}</p>
-                <p> <strong> Family: </strong> {family}</p>
-                <p> <strong> Phylum: </strong> {phylum}</p>
-                <p> <strong> Kingdom: </strong> {kingdom}</p>
+                <p>Genus: {genus}</p>
+                <p>Order: {order}</p>
+                <p>Family: {family}</p>
+                <p>Phylum: {phylum}</p>
+                <p> Kingdom: {kingdom}</p>
               </div>
               <div className="info">
                 <p>
@@ -75,12 +73,12 @@ const DetailsPage = ({ setIsSaved }) => {
             </div>
             <div className="characteristics">
               <h3>Characteristics:</h3>
-              <p> <strong> Hymenium Type: </strong> {handleNullCharacteristics(hymeniumType)}</p>
-              <p> <strong> Stipe Character: </strong> {handleNullCharacteristics(stipeCharacter)}</p>
-              <p> <strong> Spore Print Color: </strong> {handleNullCharacteristics(sporePrintColor)}</p>
-              <p> <strong> Mushroom Cap Shape: </strong> {handleNullCharacteristics(mushroomCapShape)}</p>
-              <p> <strong> Hymenium Attachment: </strong> {handleNullCharacteristics(hymeniumAttachment)}</p>
-              <p> <strong> Mushroom Ecological Type: </strong> {handleNullCharacteristics(mushroomEcologicalType)}</p>
+              <p> Hymenium Type: {handleNullCharacteristics(hymeniumType)}</p>
+              <p> Stipe Character: {handleNullCharacteristics(stipeCharacter)}</p>
+              <p> Spore Print Color: {handleNullCharacteristics(sporePrintColor)}</p>
+              <p> Mushroom Cap Shape: {handleNullCharacteristics(mushroomCapShape)}</p>
+              <p> Hymenium Attachment: {handleNullCharacteristics(hymeniumAttachment)}</p>
+              <p> Mushroom Ecological Type: {handleNullCharacteristics(mushroomEcologicalType)}</p>
             </div>
           </div>
         </div>
@@ -92,13 +90,8 @@ const DetailsPage = ({ setIsSaved }) => {
           {description}
         </p>
       </div>
-            
     </div>
   );
-};
-
-DetailsPage.propTypes = {
-  setIsSaved: PropTypes.func.isRequired,
 };
 
 export default DetailsPage;
