@@ -62,6 +62,10 @@ npm start
 
 ## How to Use "In the Field"
 ![home page](https://user-images.githubusercontent.com/119144613/265745670-01e247c8-08c6-4320-9181-e4049052a5c7.png)
+![mushroom matches](https://user-images.githubusercontent.com/119144613/265782178-3284e7d2-5071-4f73-881c-bcc5bde1c485.png)
+![details page](https://user-images.githubusercontent.com/119144613/265782620-6c2b8faf-44a7-4ab4-b8d3-1ed0449449e2.png)
+![field guide](https://user-images.githubusercontent.com/119144613/265782679-9db8efa8-b628-4031-af77-c4dd4154d787.png)
+
 
 ## Contributing  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/In-The-Field/In_The_Field_FE/issues)
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
