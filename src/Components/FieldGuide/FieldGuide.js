@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const FieldGuide = ({setIsSaved}) => {
-  const userID = 2
+  const userID = 1
 
   const { loading, error: queryError, data } = useQuery(GET_SAVED_USERMUSHROOMS, {
     variables: { id: userID },
